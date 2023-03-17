@@ -7,6 +7,1701 @@
     </script>
 </head>
 <h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<p><span class="temml-error" style="color:#b22222;white-space:pre-line;">\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage{fancybox,framed}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{Ex}[3][]{
+arc=5mm,
+lower separated=false,
+fonttitle=\bfseries,
+colbacktitle=black!10,
+coltitle=grey!50!black,
+enhanced,
+attach boxed title to top left={xshift=0.5cm,
+        yshift=-2mm},
+colframe=grey!50!black,
+colback=grey!10,
+overlay={
+\node[draw=grey!50!black,thick,
+%inner sep=2mm,
+fill= green!10,rounded corners=1mm, 
+yshift=0pt, 
+xshift=-0.5cm, 
+left, 
+text=grey!50!black,
+anchor=east,
+font=\bfseries] 
+at (frame.north east) {#3};},
+title=#2 \thetcbcounter,#1}
+
+\newtcolorbox{Définition}[3][]{
+arc=5mm,
+lower separated=false,
+fonttitle=\bfseries,
+colbacktitle=green!10,
+coltitle=green!50!black,
+enhanced,
+attach boxed title to top left={xshift=0.5cm,
+        yshift=-2mm},
+colframe=green!50!black,
+colback=green!10,
+overlay={
+\node[draw=green!50!black,thick,
+%inner sep=2mm,
+fill= green!10,rounded corners=1mm, 
+yshift=0pt, 
+xshift=-0.5cm, 
+left, 
+text=green!50!black,
+anchor=east,
+font=\bfseries] 
+at (frame.north east) {#3};},
+title=#2 \thetcbcounter,#1}
+
+\newtcolorbox{Théorème}[3][]{
+arc=5mm,
+lower separated=false,
+fonttitle=\bfseries,
+colbacktitle=purple!10,
+coltitle=purple!50!black,
+enhanced,
+attach boxed title to top left={xshift=0.5cm,
+        yshift=-2mm},
+colframe=purple!50!black,
+colback=green!10,
+overlay={
+\node[draw=purple!50!black,thick,
+%inner sep=2mm,
+fill= green!10,rounded corners=1mm, 
+yshift=0pt, 
+xshift=-0.5cm, 
+left, 
+text=purple!50!black,
+anchor=east,
+font=\bfseries] 
+at (frame.north east) {#3};},
+title=#2 \thetcbcounter,#1}
+
+\newtcolorbox{Propriété}[3][]{
+arc=5mm,
+lower separated=false,
+fonttitle=\bfseries,
+colbacktitle=red!10,
+coltitle=red!50!black,
+enhanced,
+attach boxed title to top left={xshift=0.5cm,
+        yshift=-2mm},
+colframe=red!50!black,
+colback=green!10,
+overlay={
+\node[draw=red!50!black,thick,
+%inner sep=2mm,
+fill= red!10,rounded corners=1mm, 
+yshift=0pt, 
+xshift=-0.5cm, 
+left, 
+text=red!50!black,
+anchor=east,
+font=\bfseries] 
+at (frame.north east) {#3};},
+title=#2 \thetcbcounter,#1}
+\newtcolorbox{HP}[3][]{
+arc=5mm,
+lower separated=false,
+fonttitle=\bfseries,
+colbacktitle=yellow!10,
+coltitle=yellow!50!black,
+enhanced,
+attach boxed title to top left={xshift=0.5cm,
+        yshift=-2mm},
+colframe=yellow!50!black,
+colback=yellow!10,
+overlay={
+\node[draw=green!50!black,thick,
+%inner sep=2mm,
+fill= yellow!10,rounded corners=1mm, 
+yshift=0pt, 
+xshift=-0.5cm, 
+left, 
+text=yellow!50!black,
+anchor=east,
+font=\bfseries] 
+at (frame.north east) {#3};},
+title=#2 \thetcbcounter,#1}
+\title{Algébre Linéaire}
+\usepackage{framed}
+\begin{document}
+\maketitle{7madox}
+\tableofcontents
+\chapter{Les Espaces Vectoriels}
+\section{Introduction}
+Un espace vectoriel est une structure algébrique stable par addition interne (de vecteurs) et par multiplication externe (par un scalaire).
+\subsection{Définitions:}
+\begin{Définition}[]{Définition}{}
+Soit \(E\) un ensemble non vide, et \((K,+,x)\) un corps dont le neutre pour la loi &quot;\(+\)&quot; est noté, et pour la loi &quot;\(x\)&quot; est noté .
+\newline
+On note l’ensemble E muni d’une loi interne  \(&quot;+&quot;\)   et d’une loi externe  \(&quot;.&quot;\).
+\newline
+On dit que  est un K-espace vectoriel lorsque :
+\begin{itemize}
+    \item[i)] \((E,+)\) forme un groupe abélien, dont l&#x27;élément neutre, noté \(0_E\) , est appelé le vecteur nul.
+    \item[ii)] La loi est distributive par rapport à la loi + : 
+
+\( \forall \lambda \in K, \forall (x, y) \in E^2 , \lambda.(x+y) =(\lambda.x) + (\lambda.y)\)
+    \item[iii)] \(\forall (\lambda , \mu) \in K^2, \forall x \in E, (\lambda+\mu).x=(\lambda.x)+(\mu.x) et (\lambda*\mu).x=\lambda.(\mu.x)\)
+    \item[iv)] \(\forall x \in E, 1_K.x=x\)
+\end{itemize}
+
+Les éléments de E s&#x27;appellent des \textbf{vecteurs} et les éléments de \(K\) des \textbf{scalaires}.
+\end{Définition}
+\subsection{Exemples: }
+\((R^2,+,*) \) est un \(R\)-espace vectoriel , en effet:
+\begin{itemize}
+    \item (i): (\(R^2, +)\) est un groupe abélien de neutre (0,0).
+    \item (ii): Soient \(\lambda \in R, (x,y) \in R^2 * R^2\) tel que \(x=(x_1, x_2)\) et \(y= (y_1,y_2)\), on a :
+    \begin{center}
+    \begin{align*}
+    \lambda(x+y)=
+    \lambda(x_1+y_1,x_2+y_2) \\
+    \Leftrightarrow \qquad &amp;=(\lambda x_1+\lambda y_1,\lambda x_2+\lambda y_2) \\
+    \Leftrightarrow \qquad &amp;=((\lambda x_1,\lambda x_2) +(\lambda y_1,\lambda y_2))\\
+\Leftrightarrow \qquad &amp;=\lambda(x_1,x_2)+\lambda(y_1,y_2)\\
+    \Leftrightarrow \qquad &amp;=(\lambda.x)+(\lambda.y)
+    \end{align*}
+    \end{center}
+    \item (iii): Soient \((\lambda, \mu) \in R^2, x \in R^2\) tel que \(x=(x_1, x_2)\)  on a:
+\begin{center}
+\begin{align*}
+    (\lambda + \mu).x =(\lambda+\mu).(x_1,x_2)
+\\
+    \Leftrightarrow  &amp;=(\lambda.x_1+\mu.x_1,\lambda.x_2+\mu.x_2) \\
+    \Leftrightarrow  &amp;=(\lambda.x_1,\lambda.x_2)+(\mu.x_1, \mu.x_2)\\
+    \Leftrightarrow  &amp;=(\lambda.x)+(\mu.x)
+\\
+(\lambda * \mu).x=(\lambda *\mu._x_1,\lambda*\mu.x_2) \\
+    \Leftrightarrow  &amp;=\lambda.(\mu.x_1, \mu.x2)
+\end{align*}
+(Car la multiplication est associative dans \(R\).)
+
+\item (iv) Soit \(x \in R^2\) tel que \(x=(x_1,x_2)\) on a:
+
+\(1_R.x=1.x=(1.x_1,1.x_2)=(x_1,x_2)=x\).
+(Car \(x_1, x_2\) sont dans R.)
+    
+\end{center} 
+\end{itemize}
+Donc \((R^2,+,.)\) est un R-espace vectoriel, on peut visualiser cet espace et illustrer les proposition et les theorèmes qu&#x27;on va étudier sur cet espace , on peut également les illustrer à travers le R-espace vectoriel \((R^3, +,.) \) pour lequel la démonstration est similaire à ce qu&#x27;on a déja fait.
+\paragraph{Illustration (vecteur, addition , par scalaire)}
+\subsection{Propriétés:}
+\begin{Propriété}[]{Propriétés}{}
+\begin{itemize}
+    \item \(\forall \lambda \in K, \forall x \in E, \lambda.x = 0 \Leftrightarrow \lambda=0_K \) ou \(x=0_E.\)
+    \item \(\forall x \in E, (-1_K).x=-x.\) (\(-1_K\) est l&#x27;opposé de \(1_K\) dans K et -x est l&#x27;opposé de x dans E.)
+\end{itemize}
+
+\end{Propriété}
+\paragraph{Remarque: }
+On verra lors de l&#x27;étude de l&#x27;algebre linéaire plusieurs exemples d&#x27;espaces vectoriels dont on va détaillera l&#x27;étude et les propriétés prochainement.
+
+\section{Sous-espace vectoriel}
+\subsection{Définition:}
+\begin{Définition}[]{Définition}{}
+Soit E un K-espace vectoriel et F une partie de E, F est un sous-espace vectoriel si la restriction des lois &quot;+&quot;, &quot;.&quot; sur F lui confère la structure d&#x27;un espace vectoriel , c&#x27;est à dire , si F est aussi un K-espace vectoriel.
+\end{Définition}
+\paragraph{Exemples: }
+Si E est un K-espace vectoriel alors E et \(\{0_E\}\) sont les deux des sous espaces vectoriels de E.
+\subsection{Caracterisation:}
+\begin{Propriété}[]{Caractérisation: }
+Soit F une partie de E. On peut montrer que F est un sous-espace vectoriel  de E si les conditions suivantes sont réalisées:
+
+i)\(F \neq \varnothing. \)
+
+ii)\(\forall (x,y) \in E, \forall (\lambda, \mu) \in K², \lambda.x+\mu.y \in F. \)
+\end{Propriété}
+\paragraph{Remarque:}
+\(0_E\) est dans F et \(0_F=0_E\), généralement , on montre qu&#x27;un ensemble est un sous-espace vectoriel d&#x27;un K espace vectoriel en utilisant cette caractérisation en commencant par montrer que \(0_E\) est dans F, souvent on montre aussi qu&#x27;un ensemble est un K espace vectoriel en montrant qu&#x27;il est en effet un sous-espace vectoriel d&#x27;un K espace vectoriel usuel.
+\paragraph{Exemples: }
+\subsection{Sous-espace vectoriel engendré}
+
+\subsubsubsection{Combinaison linéaire}
+ 
+Soit I un ensemble eventuellement infini.
+\begin{Définition}[]{Définition}{}
+On appelle combinaison linéaire d&#x27;éléments de la famille de vecteurs ${\displaystyle (x_{i})_{i\in I}}$ tout vecteur v de ${\displaystyle E}$ tel qu’il existe une famille de scalaires ${\displaystyle (\lambda _{i})_{i\in I}\in K}  $
+tel que les ${\displaystyle (\lambda _{i})_{i\in I}}$ sont nuls sauf un nombre fini d&#x27;entre eux et qu&#x27;elle vérifie ${\displaystyle v=\sum _{i\in I}\lambda _{i}x_{i}}.$
+\end{Définition}
+\paragraph{Exemples:-illus }
+Soient \((0,1), (3,2), (5,1)\) trois vecteurs du \(\R\)-espace vectoriel \(R^2\), alors (-1,-3/5) est une combinaison linéaire de ces vecteur, en effet on a: 
+
+\((1,-1,2/5) \in R\) tels que \((-1,-3/5) = 1*(0,1)-1*(-3,2) + 2/5*(5,1)\) 
+\subsubsubsection{S-ev engendré par une famille de vecteurs}
+\begin{Définition}[]{Définition}{}
+On appelle sous-espace vectoriel de ${\displaystyle E}$ engendré par la famille ${\displaystyle (x_{i})_{i\in I}}$, qu&#x27;on note ${\displaystyle \operatorname {Vect} \left((x_{i})_{i\in I}\right)}$: l’ensemble des combinaisons linéaires d&#x27;éléments de 
+${\displaystyle (x_{i})_{i\in I}}{\displaystyle (x_{i})_{i\in I}}$ :
+\begin{framed}
+${\displaystyle \operatorname {Vect} \left((x_{i})_{i\in I}\right)=\left\{\left.\sum _{i\in I}\lambda _{i}x_{i}~\right|~(\forall i \in I), \lambda _{i}\in K\right\}}$.
+\end{framed}
+L&#x27;ensemble ${\displaystyle \operatorname{Vect} \left((x_{i})_{i\in I}\right)}$ est, au sens de l&#x27;inclusion, le plus petit sous-espace vectoriel de ${\displaystyle E}$ contenant tous les ${\displaystyle x_{i}}.$
+\end{Définition}
+\paragraph{Exemples: -illus}
+\subsubsubsection{S-ev engendré par une partie}
+\begin{Définition}[]{Définition}{}
+Soient ${\displaystyle E}$ un espace vectoriel sur ${\displaystyle K}$ et ${\displaystyle A\subset E}.$
+
+On appelle sous-espace vectoriel engendré par ${\displaystyle A} $, et l&#x27;on note ${\displaystyle \operatorname {Vect} (A)}$l’ensemble de toutes les combinaisons linéaires d&#x27;éléments de ${\displaystyle A}$ :
+\begin{framed}
+${\displaystyle \operatorname {Vect} (A)=\left\{\left.\sum _{i=1}^{n}\lambda _{i}.a_{i}~\right|~n\in \mathbb {N} ,(\lambda _{1},\cdots ,\lambda _{n})\in K^{n},(a_{1},\cdots ,a_{n})\in A^{n}\right\}}.$
+\end{framed}
+Il s&#x27;agit, au sens de l&#x27;inclusion, du plus petit espace vectoriel contenant ${\displaystyle A}.$
+\end{Définition}
+\paragraph{Exemples-illus}
+\subsection{Somme de Sous-espaces vectoriels}
+\begin{Définition}[]{Définition}{}
+Soient ${\displaystyle F} et {\displaystyle G}$ deux sous-espaces vectoriels de ${\displaystyle E}.$ On définit la somme de ${\displaystyle F} $et ${\displaystyle G}$ comme l’ensemble :
+\begin{framed}
+${\displaystyle F+G=\{u+v\mid (u,v)\in F\times G\}}.$
+\end{framed}
+\end{Définition}
+\paragraph{Remarque:} ${\displaystyle F+G=\operatorname {Vect} \left(F\cup G\right)}.$
+\paragraph{Exemples-illus}
+\subsection{Intersubsection de Sous-espaces vectoriels}
+\begin{Propriété}[]{Proposition}{}
+Toute intersubsection de sous-espaces vectoriels de ${\displaystyle E}$ est un sous-espace vectoriel de ${\displaystyle E}$.
+\end{Propriété}
+\paragraph{Démonstration: }
+Soient E un K-espace vectoriel, F et G deux sous espaces vectoriel de E,
+\\
+\begin{itemize}
+    \item[i)] puisque F et G sont deux sous espaces vectoriel de E , \(0_{E} \in F\) et \(0_{E} \in G\) donc \(0_{E} \in F \cap G\) donc \(F \cap G \neq \varnothing\).
+    \item[ii)] Soient \((x,y,\lambda) \in F \cap G * F \cap G * K\), on a \((x,y,\lambda) \in F  * F  * K\) donc \(x+\lambda y \in F\) car F est un sous espace vectoriel de E,
+    \\ De même \((x,y,\lambda) \in  G *  G * K\) donc \(x+\lambda y \in G\) car G est un sous espace vectoriel de E,
+    \\ donc \(x+\lambda y \in F \cap G\).
+\end{itemize}
+Donc d&#x27;après la caractérisation des sous espaces vectoriel on déduit que \(F \cap G\) est un sous espace vectoriel de E.
+\newline
+\\ Pour une intersubsection de plus de deux sous espaces vectoriel , on montre la proposition en utilisant la récurrence sur le nombre des sous espaces vectoriel, en fait l&#x27;hérédite se montre exactement comme on a fait ci-dessus.
+\paragraph{Remarque:}
+Cette dernière n&#x27;est pas toujours vraie pour la réunion.
+\begin{HP}[]{Proposition-HP}{}
+Si K est un corps commutatif et E un K-espace vectoriel et F et G deux sous espaces vectoriel de E tel que \(F \cup G\) est un sous espace vectoriel de E, alors \(F \subset G\) ou \(G \subset F\).
+\end{HP}
+\paragraph{Démonstration:}
+Raisonnement par absurde:
+\newline
+\\ Soient K est un corps commutatif et E un K-espace vectoriel et F et G deux sous espaces vectoriel de E tel que \(F \cup G\) est un sous espace vectoriel de E,
+\newline
+\\ Supposons le contraire de &quot; \(F \subset G\) ou \(G \subset F\) &quot;, c&#x27;est à dire &quot;\(F \not\subset G\) et \(G \not\subset F\)&quot; alors il existe \(x \in F, x \notin G\)
+ et \(y \in G, y \notin F\). 
+ \newline
+ On a \(x+y \in F \cup G\) donc \( x+y \in F\) ou \(x+y \in G\)
+ Si \( x+y \in F\) , puisque \(x \in F, -x \in F\), donc \(x+y+(-x)=x+y-x=y \in F\), ce qui est absurde.
+ De même si \( x+y \in G\), on obtient \(x \in G\), ce qui est aussi absurde.
+ \newline
+ \\ Donc dans tous les cas , par raisonemment par absurde on obtient \(F \subset G\) ou \(G \subset F\).
+
+\subsection{Supplémentaire de Sous-espaces vectoriels}
+\begin{Définition}[]{Définition}{}
+Deux sous-espaces vectoriels ${\displaystyle F}$ et ${\displaystyle G}$ de ${\displaystyle E}$ sont dits supplémentaires si ${\displaystyle F+G=E}$ et ${\displaystyle F\cap G=\{0\}}$ autrement dit : si
+
+${\displaystyle E\subset F+G\quad {\text{et}}\quad F\cap G\subset \{0\}}$
+
+On note alors ${\displaystyle E=F\oplus G}.$
+\end{Définition}
+\paragraph{Exemples-illus}
+\subsection{Produit Cartésien de Sous-espaces vectoriels}
+\begin{Définition}[]{Définition}{}
+Soient ${\displaystyle E}$ et ${\displaystyle F}$ deux ${\displaystyle K}$-espaces vectoriels. 
+\newline
+On définit l&#x27;espace produit de ${\displaystyle E}$ et ${\displaystyle F}$ comme l&#x27;ensemble produit ${\displaystyle E\times F}$, muni des deux lois suivantes, qui en font un ${\displaystyle \mathbb{K}}$-espace vectoriel :
+
+${\displaystyle (x,y)+_{E\times F}(x&#x27;,y&#x27;):=(x+_{E}x&#x27;,y+_{F}y&#x27;)\quad {\text{et}}\quad \lambda \cdot _{E\times F}(x,y):=(\lambda \cdot _{E}x,\lambda \cdot _{F}y)}$
+\end{Définition}
+\paragraph{Exemples:}
+\section{Famille de Vecteurs}
+\subsection{Famille génératrice}
+\begin{Définition}[]{Définition}{}
+La famille ${\displaystyle (x_{i})_{i\in I}} $est dite génératrice de ${\displaystyle E}$ si
+${\displaystyle E=\mathrm {Vect} \left((x_{i})_{i\in I}\right)}$.
+Cela équivaut à dire que tout vecteur de ${\displaystyle E}$ s&#x27;exprime  comme combinaison linéaire de la famille ${\displaystyle (x_{i})_{i\in I}}$:
+\begin{framed}
+${\displaystyle \forall v\in E\quad \exists (\lambda _{i})_{I}\in K^{Card(I)} \quad v=\sum \lambda _{i}x_{i}}$
+\end{framed}
+\end{Définition}
+\paragraph{Remarque:}
+
+Si A est une partie de E et ${\displaystyle E=\mathrm {Vect} \left(A\right)}$, on dit que A est une partie génératrice de E.
+
+\paragraph{Exemples: }
+\begin{itemize}
+    \item fonctions.
+\end{itemize}
+\subsection{Famille libre, liée}
+Définitions:
+\begin{Définition}[]{Définitions}{}
+On dit que la famille ${\displaystyle (x_{i})_{i\in I}}$ est libre, ou que les vecteurs ${\displaystyle x_{i}}$ sont linéairement indépendants, si aucun vecteur n&#x27;est combinaison linéaire des autres vecteurs.
+
+Cela équivaut à dire que :
+\begin{framed}
+${\displaystyle \forall (\lambda _{i})_{i\in I}\in K^{Card(I)}\quad \sum \lambda _{i}x_{i}=0\Rightarrow \forall i\in I\quad \lambda _{i}=0}.$
+\end{framed}
+
+Une famille qui n&#x27;est pas libre est dite liée. Elle est donc liée si un vecteur est une combinaison linéaire des autres dans , c&#x27;est-à-dire :
+\begin{framed}
+${\displaystyle \exists (\lambda _{i})_{i\in I}\in K^{Card(I)}\quad \sum \lambda _{i}x_{i}=0{\text{ et }}(\lambda _{i})_{i\in I}\neq (0)}.$
+\end{framed}
+\end{Définition}
+\paragraph{Exemples : (3 classiques de gourdon) avec dem}
+Dans le R-espace vectoriel des fonctions continues de R dans R , les familles suivantes sont des familles libres:
+\begin{itemize}
+    \item[i)] \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}: R  \rightarrow R \left x \mapsto \exp{(\lambda x)} \).
+    \item[ii)] \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}: R  \rightarrow R \left x \mapsto \cos{(\lambda x)} \).
+    \item[iii)] \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}:  R \rightarrow R \left x \mapsto |x-\lambda| \).
+    \item[iv)] \((f_{k})_{ \in \mathbb{N} \) oû \(f_{n}: R  \rightarrow R \left x \mapsto \cos{(x^n)} \).
+\end{itemize}
+Soit  \(\mathbb{K}\) un sous corps de $\mathbb{C}$ , dans le \(\mathbb{K}\)-espace vectoriel  \(K[X]\), \\ la famille \((1,X,...,X^{n-p-1},P(X),P(X+1),...,P(X+p))\) avec \(P \in K[X]\) de degré \(n \geq 1\) et \(p \in [|0,n|]\), est libre quelque soit \(p \in [|0,n|]\).
+\paragraph{Démonstration:}
+\begin{itemize}
+    \item[i)] On note le \(\mathbb{R}\]-espace vectoriel par E et on montre par absurde que la famille est libre.
+    \\ On suppose que la famille \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}: R  \rightarrow R \left x \mapsto \exp{(\lambda x)} \) est liée. \\
+    On aura donc:
+    \\ \\\(\exists (\lambda_{i})_{1 \leq i \leq n} \in \mathbb{R}^n, \exists (\mu_{i})_{1 \leq i \leq n} \in \mathbb{R}^n\), avec les \(\mu_{i}\) sont non tous nuls  telles que \begin{center}\(\sum_{1 \leq i \leq n} \mu_{i} \lambda_{i} = 0_{E}\)
+    \end{center}
+    \\ \\ On indexe les \(\lambda_{i}\) de sorte que \(\lambda_{i} \le \lambda_{j}\) si \(j \le i\), c&#x27;est à dire: \(\lambda_{n} \le ... \le \lambda_{1}\).  
+    \\ \\ Soit \(k \in [|1,n|]\) tel que \(k=min\{\{1,..,n\}|\mu_{i} \neq 0_{\mathbb{R}}\}\) 
+    \\ \\ \(Lim_{x \rightarrow +\infty} exp(-\lambda_{1} x)\sum_{i=k}^n \mu_{i}exp(\lambda_{i} x)=\sum_{i=k}^n \mu_{i}exp(\lambda{i}-\lambda_{1})=\mu_{1}\).
+    \\ car pour tout \(i \geq 2, \lambda_{i}-\lambda_{1} \le 0.\).\\
+    Or \(\sum_{i=k}^n\mu{i}f_{\lambda_{i}}=0,\), donc \(u_{1}=0\), ce qui est absurde.
+    \\ \begin{framed}On conclut par raisonnement par absurde que la famille \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}: R  \rightarrow R \left x \mapsto \exp{(\lambda x)} \) est libre.
+    \end{framed}
+    
+    \item[ii)] La famille  \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}: R  \rightarrow R \left x \mapsto \cos{(\lambda x)} \) étant libre est équivalent à 
+    \begin{center}
+    \begin{framed}
+    \(\forall (\mu_{i}) \in K^{Card(I)} \sum_{i\in I}\mu_{i}x_{i}=0 \Rightarrow \forall \in I, \mu_{i}=0.\)
+    \end{framed}
+    \end{center}
+    \\ l&#x27;ensemble I qui indexe les \(\mu_{i}\) contient qu&#x27;un nombre fini d&#x27;éléments non nuls qu&#x27;on note \(n \in \mathbb{N}^*\)
+    donc \((\mu_{i})_{i\in I}=(\mu_{i})_{i\in [|1,n|]}\), 
+    \\ On conclut donc qu montrer que la liberté de la famille est équivalent à montrer que :
+    \begin{center}
+        \begin{framed}
+            \(P: \forall n \in \mathbb{N}^*, \forall (\lambda_{i})_{i\in [|1,n|]} \in\mathbb{R}^n\)  \(\forall (\mu_{i})_{i\in[|1,n|]} \in \mathbb{R}^n \sum_{i=1}^n \mu_{i}f_{\lambda_{i}}=0_{E}\)  \(\Rightarrow \forall i \in [|1,n|], \mu_{i}=0_{\mathbb{R}}\)
+        \end{framed}
+    \end{center}
+    Or le \(cos\) étant paire on va prendre (les \(\lambda_{i}\) distincts dans \(\mathbb{R}^+\)).
+    On montrera alors cette proposition par récurrence simple sur \(n \in \mathbb{N}^*\)
+    \\ \textbf{Initialisation: P(1)}
+    \\ Pour n=1, soient \((\lambda_{1},\mu_{1}) \in \mathbb{R}^2\) telles que \(\mu_{1}f_{\lambda_{1}}=0_{E}\), on a donc \(\ \forall x \in R, \mu_{1}.\cos{\lambda_{1}x}=0_{R}\), pour \(x=0, cos(0)=1\) donc \(\mu_{1}=0_{R})\).
+    \\ On a montré donc \begin{center}
+        \begin{framed}
+            \(\forall \mu_{1} \in \mathbb{R},\forall \lambda_{1} \in \mathbb{R}^+, (\mu_{1}f_{\lambda_{1}}=0_{E})\Rightarrow (\mu_{1}=0_{R})\).
+        \end{framed}
+    \end{center} 
+    \textbf{Hérédité: \(P(n) \Rightarrow P(n+1)\)}
+    \\ Soit \(n \geq 1\), supposant la proposition vraie au rang n, et montrons la au rang n+1:
+    \\ Soient \((\mu_{i})_{i \in [|1,n+1|]}\) et \((\lambda_{i})_{i \in [|1,n+1|]}\) telles que \\
+\(\sum_{i \in [|1,n+1|]}\mu_{i}f_{\lambda_{i}}=0_{E}\)
+\\ Par double dérivation et puisque (les \(\lambda_{i}\) distincts dans \(\mathbb{R}^+\)) on a: \\ \(\sum_{i=1}^{n+1}\mu_{i}(-\lambda_{i}^2)f_{\lambda_{i}}=0_{E}\) (1)
+\\ et par multiplication par \(\lambda_{n}^2\) : \(\sum_{i=1}^{n+1}\mu_{i}(\lambda_{n}^2)f_{\lambda_{i}}=0_{E}\) (2)
+\\ On ajoute (1) et (2) et on obtient \(\lambda_{n+1}^2\) : \(\sum_{i=1}^{n}\mu_{i}(\lambda_{n+1}^2-\lambda_{i}^2)f_{\lambda_{i}}=0_{E}\)
+\\ D&#x27;après l&#x27;hypothèse de la récurrence &quot;P(n)&quot;, on a : \\ \(\forall i \in [|1,n|], \mu_{i}(\lambda_{n+1}^2-\lambda{i}^2)=0_{R}\)
+\\ Et puisque les \(\lambda_{i}\) distincts dans \(\mathbb{R}^+\) on déduit que : \\ \(\forall i\in [|1,n|], \mu_{i}=0_{R}\)
+\\ Donc \(\sum_{i \in [|1,n+1|] } \mu_{i}f_{\lambda_{i}}=0_{E}\) devient \(\mu_{n+1}f_{\lambda_{n+1}}=0_{E}\)
+\\ ce qui veut dire \(\forall x \in R,\mu_{n+1}f_{\lambda_{n+1}}(x)=0_{R} \) donc \(\mu_{n+1}=0_{R}\).
+\\ Donc \( \forall i \in [|1,n+1|], \mu_{i}=0_{R}\)
+\\ \\ On a montré que , en supposant que P(n) est vraie on déduit que : \(\sum_{i \in [|1,n+1|]}\mu_{i}f_{\lambda_{i}}=0_{E} \Rightarrow \forall i \in [|1,n+1|],\mu_{i}=0_{R}\)
+
+\\ Finalement par raisonnement par récurrence : 
+\\\begin{framed}
+La famille
+\((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}: R  \rightarrow R \left x \mapsto \cos{(\lambda x)} \) est libre.
+\end{framed}
+    \item[iii)] On montrerai par absurde que la famille \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}:  R \rightarrow R \left x \mapsto |x-\lambda| \) est libre.
+    \\ Supposant que la famille \((f_{\lambda})_{\lambda \in R} \) est liée, alors comme précédemment la libérté de la famille étant équivalent à \\ \(P: \forall n \in \mathbb{N}^*, \forall (\lambda_{i})_{i\in [|1,n|]} \in\mathbb{R}^n\)  \(\forall (\mu_{i})_{i\in[|1,n|]} \in \mathbb{R}^n \sum_{i=1}^n \mu_{i}f_{\lambda_{i}}=0_{E}\)  \(\Rightarrow \forall i \in [|1,n|], \mu_{i}=0_{\mathbb{R}}\) \\
+    On supposera : \\ \(P(bar):\exists n \in \mathbb{N}^*, \exists (\lambda_{i})_{i\in [|1,n|]} \in \mathbb{R}^n ,\exists (\mu_{i})_{i\in[|1,n|]} \in \mathbb{R}^n \sum_{i=1}^n \mu_{i}f_{\lambda_{i}}=0_{E}\)  et  les \(\mu_{i}\) non tous nuls.
+    \\ D&#x27;après la proposition il existe \(\lambda_{0} \in \mathbb{R}\) tel que \(f_{\lambda_{0}\) est combinaison linéaire des \((f_{\lambda})_{\lambda \in \mathbb{R}-\{\lambda_{0}\}\) ce qui est équivalent à :
+    \\ \(\exists n \in \mathbb{N}^*, \exists (\lambda_{i})_{i\in [|1,n|]} \in \mathbb{R}^n-\{\lambda_{0}\} ,\exists (\mu_{i})_{i\in[|1,n|]} \in \mathbb{R}^n f_{\lambda_{0}}=\sum_{i=1}^n \mu_{i}f_{\lambda_{i}}\)
+    \\ Pour tout \(\lambda \in \mathbb{R}\) la fonction de \(\mathbb{R}\) dans \(\mathbb{R}\) \(x \mapsto \left|x-\lambda|\right\) est dérivable en tout \(x\neq \lambda\) donc \(\forall i \in [|1,n|], f_{\lambda_{i}}\) est dérivable sur \(\lambda_{0}\) car \(\forall i \in [|1,n|], \lambda_{0} \neq \lambda_{i}\)
+    \\ Cependant, par addition de fonction dérivable au même point et multiplication par scalaires \(\sum_{i=1}^n \mu_{i}f_{\lambda_{i}}\) est dérivable en \(\lambda_{0}\) or \(f_{\lambda_{0}}=\sum_{i=1}^n \mu_{i}f_{\lambda_{i}}\) donc \(f_{\lambda_{0}}\) est dérivable en \(\lambda_{0}\) ce qui est absurde.
+    \\ Finalement on a montré que la proposition \(P: \forall n \in \mathbb{N}^*, \forall (\lambda_{i})_{i\in [|1,n|]} \in\mathbb{R}^n\)  \(\forall (\mu_{i})_{i\in[|1,n|]} \in \mathbb{R}^n \sum_{i=1}^n \mu_{i}f_{\lambda_{i}}=0_{E}\)  \(\Rightarrow \forall i \in [|1,n|], \mu_{i}=0_{\mathbb{R}}\) est vraie, donc \begin{framed}
+        La famille \((f_{\lambda})_{\lambda \in R} \) oû \(f_{\lambda}:  R \rightarrow R \left x \mapsto |x-\lambda| \) est libre.
+    \end{framed}
+    \item[iv)]
+\end{itemize}
+\subsection{Base d&#x27;un espace vectoriel}
+\begin{Définition}[]{Définition}{}
+Une famille ${\displaystyle (e_{i})_{i\in I}}$ de vecteurs de ${\displaystyle E}$ est une base de ${\displaystyle E}$ si et seulement si elle est libre et génératrice de ${\displaystyle E}$.
+
+Ce qui est équivalent à:
+
+Tout vecteur de ${\displaystyle E}$ s&#x27;écrit comme une combinaison linéaire unique des ${\displaystyle e_{i}}$ :
+\begin{framed}
+${\displaystyle \forall v\in E\quad \exists !(\lambda _{i})_{i\in I}\in K^{Card(I)}\quad v=\sum \lambda _{i}e_{i}}$
+\end{framed}
+Les ${\displaystyle (\lambda _{i})_{i\in I}}$ sont tous nuls sauf un nombre fini, et sont alors appelées les coordonnées de ${\displaystyle v}$ dans la base ${\displaystyle (e_{i})_{i\in I}}$.
+\end{Définition}
+\paragraph{Exemple:}
+\begin{itemize}
+    \item (1,i) est une base du R-espace vectoriel \((C,+,.)\).
+    \item il existe une certaine type de base dit priviligée qui s&#x27;appele base canonique, elle apparait comme la base la plus simple pour un espace vectoriel:
+    Soit \(n \in \N^*\), la base canonique du R-espace vectoriel \(\R^n\) est \(B_c=(e_1,e_2,\dots, e_n\) avec 
+    \(\forall i \in [|1,n|], e_i=(0,\dots,1,\dots,0)\) , le 1 étant le i-ème coefficient du vecteur \(e_i\), tout simplement \(e_i\) est le vecteur dont tous ces coefficients sont nuls sauf le i-ème qui égale à 1.
+
+    Cette base parait celle la plus naturelle à considérer, en fait prenant l&#x27;exemple de \((R^3,+,.)\) un vecteur de ce dernier s&#x27;écrit sous la forme : \((a,b,c)\) avec \(a,b,c \in R\) donc :
+
+    \((a,b,c)=a*(1,0,0)+b*(0,1,0)+c*(0,0,1)\) 
+
+    du coup la base canonique de \((R^2,+,.)\) est \(((1,0,0),(0,1,0),(0,0,1)), e_1=(1,0,0), e_2=(0,1,0), e_3=(0,0,1)\),  il faut bien retenir et comprendre la base canonique car elle est utilisée extensivement en algébre linéaire.
+\end{itemize}
+
+\begin{Théorème}[]{Théorème}{}
+Si E est un espace vectoriel engendré par une famille de vecteurs finie ${\displaystyle (x_{i})_{i\in [|1,n|]}, n \in N^*}$, alors:
+\begin{itemize}
+    \item[i)] Toute famille libre a au plus n vecteurs.
+    \item[ii)] Toute famille génératrice a au moins n vecteurs.
+\end{itemize}
+
+\end{Théorème}
+\paragraph{Démonstration}
+\section{Dimension}
+\begin{Définition}[]{Définition}{}
+Un espace vectoriel est dit de dimension finie s&#x27;il existe un famille génératrice finie de celui ci, dans le cas contraire , on parle d&#x27;espace vectoriel de dimension infinie.
+\end{Définition}
+\paragraph{Remarque: }
+Il faut faire attention au corps de base de l&#x27;espace vectoriel car il agit sur la dimension , par exemple \((\C,.,+\) est un espace vectoriel de dimension 2 si on le voit en tant que R-espace vectoriel, en fait sa base est \((1,i)\) , cependant en tant qu&#x27;un C-espace vectoriel , il est de dimension 1.
+
+On aborde cette remarque avec plus de détail dans les subsections concernant la notion hors programme d&#x27;extension de corps.
+\paragraph{Exemples: }
+\begin{itemize}
+    \item Soit \(n \in \N^*\) alors \((R^n,+,*)\) est de dimension n.
+    
+\end{itemize}
+\subsection{Théorème d&#x27;existence de base:}
+\begin{Théorème}[]{Théorème d&#x27;existence de base}{}
+Soit E un espace de dimension finie, si ${\displaystyle G=(x_{i})_{i\in I}}$ est une famille génératrice de E et il existe ${\displaystyle{J \in I}}$pour laquelle la famille  ${\displaystyle L=(x_{i})_{i\in J}}$ est libre, alors il existe une base B de E tq ${\displaystyle {L\subset B\subset G}}$ 
+\end{Théorème}
+\paragraph{Démonstration: }
+\subsection{Théorème de la base incomplète:}
+\begin{Théorème}[]{Théorème de la base incomplète}{}
+Soit E un K-espace vectoriel de dimension finie,
+
+De toute famille génératrice de E, on peut en extraire une base en prenant les vecteurs linéairement indépendants.
+
+Toute famille libre de E peut être complétée en une base, en ajoutant des vecteurs qui ne sont pas une combinaison linéaire des vecteurs de la famille libre.
+\end{Théorème}
+
+\begin{Définition}[]{Définition}{}
+Soit E un K-espace vectoriel de dimension finie, 
+toutes les bases de E ont le même cardinal qu&#x27;on note ${\displaystyle{dim_{K}E.}}$
+
+Par convention : ${\displaystyle{dim_{K} E=0 $ pour $E=\{0\}.}}$
+\end{Définition}
+\subsection{Proposition:}
+\begin{Propriété}[]{Proposition}{}
+Soit E un K-espace vectoriel de dimension ${\displaystyle{n\in \N^*}}$:
+
+Toute famille de n vecteurs libre de est une base de E.
+
+Toute famille de n vecteurs génératrice est une base de E.
+\end{Propriété}
+\paragraph{Démonstration: }
+\subsection{Proposition:}
+\begin{Propriété}[]{Proposition}{}
+Soit E un K-espace vectoriel de dimension finie et F un sous espace vectoriel de E alors:
+
+${\displaystyle{dim_{K} E \leq dim_{K} F}}$.
+
+Cas d&#x27;égalité:
+Si ${\displaystyle{dim_{K} E = dim_{K} F}}$ , on a ${\displaystyle{E = F}}$.
+\end{Propriété}
+\paragraph{Démonstration: }
+\subsection{Formule de Grassman:}
+\begin{Propriété}[]{Formule de Grassman}{}
+Soit E un K-espace vectoriel et $E_1$ et $E_2$ deux sous espace vectoriels de E alors $ E_1+E_2$ est aussi un sous espace vectoriel de E et on a la formule suivante:
+\begin{framed}
+${\displaystyle{dim_{K} E_1  dim_{K} E_2= dim_{K} (E_1+E_2)-dim_{K}(E_1 \cap E_2)}}$
+\end{framed}
+\begin{framed}
+${\displaystyle{dim_{K} E = dim_{K} E_1 + dim_{K} E_2}}$ et $E_1 \cap E_2 = \{0\}.$
+\newline
+$\iff dim_{K} E = dim_{K} E_1 + dim_{K} E_2$ et $ E=E_1+E_2 \iff E=E_1\oplus E_2 $
+\end{framed}
+\end{Propriété}
+\chapter{Les Applications Linéaires}
+\section{Definitions}
+Soient E et F deux K-espaces vectoriels:
+\subsection{Application Linéaire:}
+\subsubsubsection{Définition: }
+\begin{Définition}[]{Définition}{}
+Une application ${\displaystyle u:E\to F}$ est dite linéaire si elle vérifie :
+\newline
+\begin{itemize}
+    \item[i)] L&#x27;additivité: $\forall (x, y) \in E^2 ,  u(x+y)=u(x)+u(y)$
+    \item[ii)] L&#x27;homogéniété: $ \forall x \in E,\space  \forall \lambda \in K, \space  u(\lambda x)=\lambda u(x)$
+\end{itemize}
+
+ou encore, si elle vérifie :
+\begin{center}
+    ${\displaystyle \forall (x,y) \in E^2, \forall \lambda \in K , u(\lambda x+y)=\lambda u(x)+u(y)}$.
+\end{center}
+Elles s&#x27;appellent donc des homomorphismes (ou tout simplement morphismes) et leur ensemble est un K-espace vectoriel noté $\(L(E,F)\)$
+\end{Définition}
+
+
+Exemples: 
+\begin{Propriété}[]{Propriétés}{}
+\begin{itemize}
+    \item L&#x27;addition, composée, de deux applications linéaires est une application linéaire.
+    \item Une application linéaire reste linéaire si elle est multipliée par un scalaire.
+    \item La reciproque d&#x27;une bijection linéaire est encore linéaire.
+\end{itemize}
+\end{Propriété}
+\subsubsubsection{Termes: }
+\begin{Propriété}[]{Propriétés}{}
+On appelle :
+\begin{itemize}
+    \item Endomorphisme de E : toute application linéaire de E dans E.
+    \item Isomorphisme de E vers F:  toute bijection linéaire de E dans F ;
+    \item Automorphisme de E: tout endomorphisme bijectif de E, ou encore, tout isomorphisme de E dans E.
+    \item Forme linéaire sur E:  toute application linéaire de E dans K.
+\end{itemize}
+\end{Propriété}
+\paragraph{Remarque: }
+\begin{itemize}
+    \item L&#x27;ensemble \(L(E, E)\) des endomorphismes de E se note plus simplement \(L(E)\).
+    \item L&#x27;ensemble des automorphismes de E s’appelle le groupe linéaire de E et se note \(GL(E)\).
+    \item L&#x27;ensemble \(L(E, K)\) des formes linéaires sur E se note plus simplement E* et porte le nom de dual de E. (On va voir plus tard).
+\end{itemize}
+
+\subsection{Noyau, Image: }
+\subsubsubsection{Définitions: }
+\begin{Définition}[]{Définitions}{}
+Soit ${\displaystyle u\in \operatorname {L} (E,F)}$. On appelle :
+\begin{itemize}
+    \item L&#x27;ensemble $f(E)= {\displaystyle \{u(x)\mid x\in E\}}$, s&#x27;appele l&#x27;image de u et est noté ${\displaystyle Im(u).}$
+    \item L&#x27;ensemble $f^{-1}(\{0_{F}\}) = {\displaystyle \{x\in E\mid u(x)=0_{F}\}}$, s&#x27;appele le noyau de u et est noté ${\displaystyle Ker(u)}$.
+\end{itemize}
+\end{Définition}
+\paragraph{Remarque: }
+La notation &quot;Ker&quot; vient du mot allemand &quot;Kern&quot; qui signifie noyau.
+\subsubsubsection{Théorème}
+\begin{Théorème}[]{Théorème}{}
+Soit ${\displaystyle u\in \operatorname {L} (E,F)}$.
+
+L&#x27;image réciproque par u d&#x27;un sous-espace vectoriel de F est un sous-espace vectoriel de E ;
+L&#x27;image directe par u d&#x27;un sous-espace vectoriel de E est un sous-espace vectoriel de F.
+\end{Théorème}
+\subsubsubsection{Corollaire}
+\begin{Propriété}[]{Corollaire}{}
+\begin{itemize}
+    \item Ker(u) est un sous-espace vectoriel de E.
+    \item Im(u) est un sous-espace vectoriel de F.
+\end{itemize}
+\end{Propriété}
+\subsubsubsection{Théorème: }
+\begin{Théorème}[]{Théorème}{}
+Soit ${\displaystyle u\in \operatorname {L} (E,F)}$.
+
+\begin{itemize}
+    \item  u est injective si et seulement si Ker(u) = {0}.
+    \item u est surjective si et seulement si Im(u) = F.
+\end{itemize}
+\end{Théorème}
+\paragraph{Demonstration: }
+\section{Caracterisation par les bases: }
+\subsection{Théorème: }
+\begin{Théorème}[]{Théorème}{}
+Pour toute base ${\displaystyle (e_{i})_{i\in I}} de {\displaystyle E}$, l&#x27;application 
+
+\begin{align*}
+    ${\displaystyle \operatorname {L} (E,F)\to F^{Card(I)}}$
+    
+    $u\mapsto \left(u(e_{i})\right)_{i\in I}}$
+\end{align*}
+
+est bijective.
+\end{Théorème}
+\subsection{Théorème: }
+\begin{Théorème}[]{Théorème}{}
+Soit ${\displaystyle u\in \operatorname {L}}$ (E,F).
+\begin{itemize}
+    \item ${\displaystyle u}$ est surjective si et seulement si l&#x27;image par ${\displaystyle u}$ d&#x27;au moins une famille génératrice de ${\displaystyle E}$ est génératrice de ${\displaystyle F}$ (de plus, l&#x27;image par ${\displaystyle u}$ de toute famille qui engendre ${\displaystyle E}$ est alors génératrice de ${\displaystyle F}$).
+    \item ${\displaystyle u}$ est injective si et seulement si l&#x27;image par ${\displaystyle u}$ d&#x27;au moins une base de ${\displaystyle E}$ est libre (de plus, l&#x27;image par ${\displaystyle u}$ de toute famille libre est alors libre) ;
+${\displaystyle u}$ est un isomorphisme si et seulement si l&#x27;image par ${\displaystyle u}$ d&#x27;au moins une base (ou de toute base) de ${\displaystyle E}$ est une base de ${\displaystyle F}$.
+\end{itemize}  
+\end{Théorème}
+
+\section{Projections, Symétries: }
+\subsection{Projecteurs: }
+\subsubsubsection{Définition}
+\begin{Définition}[]{Définition}{}
+Soient $E_{1}$ et $E_{2}$ deux sous espaces vectoriels de E tel que ${\displaystyle E_{1} \oplus E_{2}=E}$ ie:
+${\displaystyle \forall x \in E, \exists! (x_{1}, x_{2}) \in E_{1} {x} E_{2}}$ tel que ${\displaystyle x=x_{1}+x_{2}}$
+
+L&#x27;application ${\displaystyle  p:E\to E}$
+${x\mapsto x_{1}}$ s&#x27;appelle la projection sur $E_{1}$ parallèlement à $E_{2}$.
+\begin{itemize}
+    \item[i)] ${\displaystyle p \in L(E)}.$
+    \item[ii)] ${\displaystyle Im(p)=E_{1}}$ et ${\displaystyle Ker(p)=E_{2}}.$
+    \item[iii)] ${\displaystyle p \circ p = p}.$
+\end{itemize}
+Reciproquement si ${\displaystyle p \in L(E)}$ et ${\displaystyle p \circ p = p}$ alors p est un projecteur.
+\end{Définition}
+\subsubsubsection{Théorème:}
+\begin{Théorème}[]{Théorème}{}
+    Soit ${\displaystyle p \in L(E)}$
+    p est un projecteur ${\Leftrightarrow}$ p est la projection sur Im(p) parallèlement à Ker(p).
+    
+    Dans ce cas ${\displaystyle E= Im(p) \oplus Ker(p)}$
+\end{Théorème}
+\subsection{Symétrie:}
+\subsubsubsection{Définition:}
+\begin{Définition}[]{Définition}{}
+    Soient $E_{1}$ et $E_{2}$ deux sous espaces vectoriels de E tel que ${\displaystyle E_{1} \oplus E_{2}=E}$ ie:
+${\displaystyle \forall x \in E, \exists! (x_{1}, x_{2}) \in E_{1} {x} E_{2}}$ tel que ${\displaystyle x=x_{1}+x_{2}}$
+
+L&#x27;application ${\displaystyle  s:E\to E}$
+${x\mapsto x_{1} - x_{2}}$ s&#x27;appelle symétrie par rapport à $E_{1}$ parallèlement à $E_{2}$.
+\begin{itemize}
+    \item[i)] ${\displaystyle s \in L(E)}$.
+    \item[ii)] Si ${\displaystyle p \in L(E)}$ est la projection sur $E_{1}$ parallèlement à $E_{2}$ alors: 
+${\displaystyle  s=2p-Id_{E}}$
+\end{itemize}
+\end{Définition}
+\subsubsubsection{Proposition: }
+\begin{Propriété}[]{Proposition}{}
+Dans le cadre du programme , K=$R$ ou $C$ donc on a le résultat suivant:
+
+$s \in L(E)$ est une symétrie $\Leftrightarrow$ $s \circ s=Id_{E}$
+
+Dans ce cas si $p=1/2(s+Id_{E})$, p est un projecteur et s est la symétrie par rapport à Im(p) parallèlement à Ker(p).
+
+On expliquera plus loin, plus ce résultat et d&#x27;ou il vient (Voir Notion Caractéristique d&#x27;un corps).
+\end{Propriété}
+\section{L&#x27;espace L(E,F):}
+\subsection{Théorème: }
+\begin{Théorème}[]{Théorème}{}
+Si ${\displaystyle E}$ est de dimension finie alors
+
+${\displaystyle \dim \left(\operatorname {L} (E,F)\right)=\dim(E)\times \dim(F).}$.
+\end{Théorème}
+\paragraph{Remarque: }
+Si ${\displaystyle u\in \operatorname {L} (E,F)}$et ${\displaystyle v\in \operatorname {L} (F,G)}$ alors ${\displaystyle v\circ u\in \operatorname {L} (E,G)}$.
+\section{Rang:}
+\subsection{Définition:}
+\begin{Définition}[]{Définition}{}
+Le rang d&#x27;une application linéaire est la dimension de son image. 
+Si ${\displaystyle u:E\to F}$ est une application linéaire alors on note son rang par $rg(u)$ et on a :
+    ${\displaystyle rg(u) = dim_{K}(Im(u))}.$
+\end{Définition}
+\subsection{Théorème:}
+\begin{Théorème}[]{Théorème}{}
+La composition par un isomorphisme laisse le rang invariant, c&#x27;est à dire :
+Soit ${\displaystyle u\in \operatorname {L} (E,F)}$:
+    
+${\displaystyle \forall v\in \operatorname {L} (F,G)}$ bijective ${\displaystyle \mathrm {rg} (v\circ u)=\mathrm {rg} (u)}.$
+
+${\displaystyle \forall v\in \operatorname {L} (F,G)}$ bijective $ {\displaystyle\mathrm {rg} (v\circ u)=\mathrm {rg} (u)}.$
+\end{Théorème}
+\subsection{Théorème du rang:}
+\begin{Théorème}[]{Théorème du rang}{}
+    Soit E un K-espace vectoriel de dimension finie et F un espace vectoriel , et ${\displaystyle u \in L(E,F)}$ alors:
+    u est de rang fini et on a :
+    
+    ${\displaystyle dim_{K}(E)=dim_{K}(Im(u))+dim_{K}(Ker(u))}$
+    
+\end{Théorème}
+\begin{Propriété}[]{Corollaire}{}
+ Soient E, F deux K-espaces vectoriel de même dimension finie \(u \in L(E,F)\) , alors les assertions suivantes sont équivalentes:
+ \\ \begin{itemize}
+     \item[i)] u bijective.
+     \item[ii)] u surjective.
+     \item[iii)] u injective.
+ \end{itemize}
+\end{Propriété}
+\section{Stabilité:}
+\begin{Définition}[]{Définition}{}
+
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+
+\end{Propriété}
+\begin{Propriété}[]{Proposition}{}
+
+\end{Propriété}
+\section{Exercices:}
+\subsection{Projecteurs:}
+\subsection{Lemmes de factorisation:}
+\begin{Ex}[]{Exercice:}{}
+Soient E,F,G 3 K-espaces vectoriels de dimension finie, et soit \(g:E \Rightarrow G\) une application linéaire.
+\\ \begin{itemize}
+    \item[1)] Soit \(f:E \Rightarrow F\) une application linéaire, montrer que:
+    \\ (\( \exists h: F\Rightarrow G \in L(F,G)\)  tel que \(g=h \circ f\).) \(\Leftrightarrow\) (\(Ker f \subset Ker g.\))
+    \item[2)] Soit \(h:F \Rightarrow G\) une application linéaire,
+    montrer que: 
+    \\ (\( \exists f: E\Rightarrow F \in L(E,F)\),  tel que \(g=h \circ f\).) \(\Leftrightarrow\) (\(Im g \subset Im h.\))
+    \item[3)] On suppose maintenant que \(g:E \Rightarrow F \in L(E,F)\), montrer que:
+    \\ (\(rg g \leq rg f\).) \(\Leftrightarrow\) (\(\exists h \in GL(F)\) et \(k \in L(E)\) tels que \(h \circ g = f \circ k\).)
+\end{itemize}
+\end{Ex}
+\paragraph{Correction:}
+\subsection{Inégalité de Sylvester:}
+\begin{Ex}[]{Exercice:}{}
+Soient E un K-espace vectoriel de dimension finie, F un K-espace vectoriel et \(f,g \in L(E,F)\):
+\\ \begin{itemize}
+    \item[1)] Montrer que \(|rg f- rg g| \leq rg(f+g) \leq rg f + rg g\).
+    \item[2)] Supposant maintenant que f et g sont les deux des endomorphismes de E, montrer que :
+    (\(rg(f+g)=rg(f)+rg(g).\)) \(\Leftrightarrow\) (\(Im(f) \cap Im(g)={\varnothing} et Ker(f)+Ker(g)=E\).)
+    \item[3)] Montrer l&#x27;inégalité de Sylvester : 
+    \\ \(rg(f)+rg(g)-dim_{K}(E) \leq rg(fg) \leq min(rg(f),rg(g))\). 
+\end{itemize}
+\end{Ex}
+\paragraph{Correction:}
+\subsection{Endomrophismes particuliers: }
+\begin{Ex}[]{Exercice:}{}
+Soient E un K-espace vectoriel de dimension finie et \(u \in L(E)\):
+\\ \begin{itemize}
+    \item[1)] Montrer que les assertions sont équivalentes:
+    \begin{itemize}
+        \item[i)] \(E=Ker u \oplus Im u\).
+        \item[ii)] \(\exists v \in L(E), v\circ u =0 et v+u \in GL(E)\).
+        \item[iii)] \(Ker u = Ker u^2\).
+        \item[iv)] \(Im u = Im u^2\).
+        \end{itemize}
+\end{itemize}
+\end{Ex}
+\paragraph{Correction:}
+
+
+\section{Compléments:}
+\subsection{Drapeaux:}
+\subsection{Espace vectoriel quotient:}
+\begin{Définition}[]{Définitions}{}
+Soient E un K-espace vectoriel et F un sous espace vectoriel de E,
+\\
+La relation R() définit une relation d&#x27;equivalence sur E.
+L&#x27;espace quotient E/F muni des lois &quot;+&quot;:\(x+y=x+y\), &quot;.&quot;:\(\lambda.x=\lambda.x\)
+est un K-espace vectoriel
+\\
+si E/F est de dimension finie, On appele codimension de F la dimension de E/f tel que :
+\\ \(dim_{K}(E/F)=codim_{E}(F)\).
+\\ Dans ce cas on dit que F est de codimension finie.
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+Soit E un K-espace vectoriel et F un sous espace vectoriel de E.
+\\ (F est de codimension finie) \(\Leftrightarrow\) (F admet un supplémentaire S dans E).
+\\ Dans ce cas \(dim_{K}(S)=codim_{E}(F)\).
+\end{Propriété}
+\paragraph{Démonstration:}
+j
+\begin{Propriété}[]{Corollaire}{}
+Si E est un K-espace vectoriel de dimension finie et F un sous espace vectoriel de E , alors F est de codimension finie et :
+ \\ \(dim_{K}(E/F)=dim_{K}(E)-dim_{K}(F)\).
+ \end{Propriété}
+\begin{Propriété}[]{Corollaire}{}
+Si E, F sont deux K-espaces vectoriel et \(u \in L(E,F)\) , alors Im(u) est isomorphe à E/Ker(u). 
+ \end{Propriété}
+\subsection{L&#x27;espace L(E):}
+\begin{Théorème}[]{Théorème-Programme}{}
+    ${\displaystyle (\operatorname {L} (E),+,\cdot ,\circ )}$ est une ${\displaystyle K}$-algèbre associative unifère (non commutative si ${\displaystyle \dim(E)\geq 2}$).
+\end{Théorème}
+\begin{Définition}[]{Définition}{}
+On appelle homothétie \(u \in L(E)\) de rapport \(\lambda \in K\) l&#x27;endomorphisme \(\lambda.Id_{E}\)
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+    Soit \(u \in L(E)\), 
+    \\ (u est une homothétie) \Leftrightarrow (\(\forall x \in E, \) la famille \((x,f(x))\) est liée.)
+\end{Propriété}
+\paragraph{Démonstration: }
+On a 
+\begin{Propriété}[]{Proposition-HP}{}
+    Le centre du groupe linéare \(Gl(E)\) est l&#x27;ensemble des homotéthie de rapport non nul.
+\end{Propriété}
+\paragraph{Démonstration:}
+\begin{Propriété}[]{Proposition-HP}{}
+Soit \(E\) un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n \in \mathbb{N}^*\) \(u \in \mathbb{L}(E)\),
+    (\(u\) est une homothétie) \(\Leftrightarrow\) (si \(k \in [|1,n-1|]\) u stabilise tous les sous-espace vectoriels de E de dimension k)
+\end{Propriété}
+\paragraph{Démonstration:}
+\subsubsubsection{Idéaux de \(\mathbb{L}(E)\)}
+\begin{Propriété}[]{Proposition-HP}{}
+
+\end{Propriété}
+\begin{Propriété}[]{Proposition-HP}{}
+
+\end{Propriété}
+\begin{Propriété}[]{Proposition-HP}{}
+
+\end{Propriété}
+\chapter{Les Matrices}
+\section{Généralités: }
+\subsection{Définition: }
+\begin{Définition}[]{Définition}{}
+Une matrice à coefficients dans K est une famille ${\displaystyle \left(a_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}}$ d&#x27;éléments de K.
+
+Les nombres m et n sont appelés dimensions de la matrice. On dit qu&#x27;une matrice est de taille m × n.
+
+Les éléments ${\displaystyle a_{i,j}}$ sont appelés coefficients de la matrice.
+
+Une matrice ${\displaystyle A=\left(a_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}} $est notée de la manière suivante :
+
+
+${\displaystyle A=
+\begin{pmatrix}
+a_{1,1} &amp;&amp; a_{1,2} &amp;&amp; a_{1,3} &amp;&amp; \dots &amp;&amp; a_{1,n}
+\\a_{2,1} &amp;&amp; a_{2,2} &amp;&amp; a_{2,3} &amp;&amp;\dots &amp;&amp; a_{2,n}
+\\ \vdots &amp;&amp;\vdots &amp;&amp;\vdots &amp;&amp;\ddots &amp;&amp; \vdots &amp;&amp;\vdots&amp;&amp;\vdots&amp;&amp;\vdots
+&amp;&amp; &amp;&amp; \vdots
+\\a_{m,1} &amp;&amp; a_{m,2} &amp;&amp; a_{m,3}&amp;&amp;\dots &amp;&amp; a_{m,n}
+\end{pmatrix}}$
+\end{Définition}
+\paragraph{Remarques: }
+\begin{itemize}
+\item L’ensemble des matrices de dimensions données à coefficients dans K est noté ${\displaystyle \mathrm {M} _{m,n}\left(K\right)}$.
+
+\item L&#x27;ensemble ${\displaystyle \mathrm {M} _{n,n}\left(K\right)}$ est noté plus simplement ${\displaystyle \mathrm {M} _{n}\left(K\right)}$.
+    \item Une matrice de largeur n = 1 est appelée vecteur, ou plus spécifiquement vecteur colonne.
+\item Une matrice de hauteur m = 1 est appelée vecteur ligne.
+\item Une matrice telle que m = n est appelée matrice carrée.
+\end{itemize}
+\subsection{Opérations sur les matrices: }
+\subsubsubsection{Addition: }
+\begin{Définition}[]{Définition}{}
+    Soient ${\displaystyle A}$ et ${\displaystyle B}$ deux matrices de même taille à coefficients dans K. Alors il est possible de les additionner. Leur somme est une matrice ${\displaystyle A+B}$ à coefficients dans K, de même taille que ${\displaystyle A}$ et ${\displaystyle B}$ :
+
+${\displaystyle \left(a_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}+\left(b_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}:=\left(a_{i,j}+b_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}}.$
+\end{Définition}
+\subsubsubsection{Produit matricielle:}
+\begin{Définition}[]{Définition}{Par un scalaire}
+Le produit d&#x27;une matrice ${\displaystyle A\in \mathrm {M} _{m,n}(K)}$ par un scalaire ${\displaystyle \lambda \in K}$ est la matrice ${\displaystyle \lambda A\in \mathrm {M} _{m,n}(K)} $dont les coefficients sont ceux de ${\displaystyle A}$ multipliés par ${\displaystyle \lambda }:$
+\begin{center}
+${\displaystyle \lambda \;\left(a_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}:=\left(\lambda a_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}}.$
+\end{center}
+\end{Définition}
+\begin{Définition}[]{Définition}{Produit de deux matrices}
+Soient ${\displaystyle A=\left(a_{i,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,n]\!\right]}\in \mathrm {M} _{m,n(K)}}$ et ${\displaystyle B=\left(b_{i,j}\right)_{(i,j)\in \left[\![1,n]\!\right]\times \left[\![1,p]\!\right]}\in \mathrm {M} _{n,p(K)}}$ deux matrices telles que . Le produit de ${\displaystyle A}$ par ${\displaystyle B}$ est la matrice suivante :
+\begin{center}
+${\displaystyle AB=\left(\sum _{k=1}^{n}a_{i,k}b_{k,j}\right)_{(i,j)\in \left[\![1,m]\!\right]\times \left[\![1,p]\!\right]}\in \mathrm {M} _{m,p(K)}}.$
+\end{center}
+\end{Définition}
+\paragraph{Remarque:}
+La condition pour la possibilité du produit matricielle est que le nombre de colonnes de la première matrice est égale au nombre de lignes de la deuxième. 
+\subsection{Matrices élémentaires: }
+
+
+
+\subsubsubsection{Matrice nulle: }
+\begin{Définition}[]{Définition}{}
+    La matrice nulle de ${\displaystyle \mathrm {M} _{m,n}\left(K\right)}$, notée 0 ou ${\displaystyle \mathbf {0} _{\mathrm {M} _{m,n}\left(K\right)}}$, est :
+${\displaystyle \mathbf {0} _{\mathrm {M} _{m,n}\left(K\right)}:={\begin{pmatrix}0&amp;0&amp;\cdots &amp;0\\0&amp;0&amp;\cdots &amp;0\\\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots &amp;0\end{pmatrix}}}{\displaystyle \mathbf {0} _{\mathrm {M} _{m,n}\left(K\right)}:={\begin{pmatrix}0&amp;0&amp;\cdots &amp;0\\0&amp;0&amp;\cdots &amp;0\\\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots &amp;0\end{pmatrix}}}$
+où 0 est l&#x27;élément neutre pour l&#x27;addition dans l&#x27;anneau K — si$ {\displaystyle K=\mathbb {R}}$ ou ${\displaystyle \mathbb {C}}$, c’est simplement le zéro habituel.
+\end{Définition}
+\subsubsubsection{Matrice identité}
+\begin{Définition}[]{Définition}{}
+On appelle matrice identité de taille n la matrice
+
+${\displaystyle \mathrm {I} _{n}={\begin{pmatrix}1&amp;0&amp;\cdots &amp;0\\0&amp;1&amp;\cdots &amp;0\\\vdots &amp;\ &amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots &amp;1\end{pmatrix}}}{\displaystyle \mathrm {I} _{n}={\begin{pmatrix}1&amp;0&amp;\cdots &amp;0\\0&amp;1&amp;\cdots &amp;0\\\vdots &amp;\ &amp;\ddots &amp;\vdots \\0&amp;0&amp;\cdots &amp;1\end{pmatrix}}}.$
+\end{Définition}
+\begin{Propriété}[]{Propriétés}{}
+    \begin{itemize}
+        \item ${\displaystyle \forall A\in \mathrm {M} _{m,n}\left(K\right)\quad A\mathrm {I} _{n}=A}.$
+        \item ${\displaystyle \forall B\in \mathrm {M} _{n,p}\left(K\right)\quad \mathrm {I} _{n}B=B}$
+    \end{itemize}
+\end{Propriété}
+\subsubsubsection{Propriétés (binome, produit, triangulaire)}
+\subsection{Mn(K)}
+\subsubsubsection{Transposition d&#x27;une matrice: }
+\begin{Définition}[]{Définition}{}
+    La matrice transposée ou la transposée d&#x27;une matrice ${\displaystyle A\in \mathrm {M} _{m,n}(K)}$ est la matrice notée ${\displaystyle ^{\operatorname {t} }\!A\in \mathrm {M} _{n,m}(K)}$ (aussi  notée ${\displaystyle A^{\operatorname {T} }} $ou ${\displaystyle A^{\operatorname {t} }}$), B telle que:
+\begin{center}
+${\displaystyle \forall (i,j)\in \{1,\ldots ,n\}\times \{1,\ldots ,m\}\qquad b_{i,j}=a_{j,i}}$.
+\end{center}
+\end{Définition}
+\subsubsubsection{Inverse d&#x27;une matrice: }
+\begin{Définition}[]{Définition}{}
+    Soit ${\displaystyle A}$ une matrice carrée de taille n × n. Lorsqu&#x27;elle existe, on appelle inverse à gauche (resp à droite) de ${\displaystyle A}$, une matrice telle que : ${\displaystyle A_{G}^{-1}\,A= {I} _{n}}$.(resp ${\displaystyle A\,A_{D}^{-1}= {I} _{n}}$)
+    Lorsqu&#x27;une matrice admet un inverse à gauche et à droite on dit que cette matrice est inversible , cet inverse ainsi est unique et l&#x27;on note ${\displaystyle A^{-1}}$, 
+\end{Définition}
+\begin{Théorème}[]{Théorème}{}
+    Une matrice carrée ${\displaystyle A}$ est inversible si et seulement si ${\displaystyle \det A\neq 0}$, et dans ce cas, on a :
+\begin{center}
+${\displaystyle A^{-1}={\frac {1}{\det A}}\,{}^{t}\!\left(\operatorname {com} A\right)}$
+\end{center}
+\end{Théorème}
+\begin{Propriété}[]{Proposition}{}
+    Soit ${\displaystyle A\in \mathrm {M} _{n}(K)}$. Les propositions suivantes (dans lesquelles on identifie Mn,1(K) à Kn) sont équivalentes :
+\begin{itemize}
+    \item[i)] A est inversible.
+    \item[ii)]l&#x27;application linéaire ${\displaystyle K^{n}\to K^{n},\;X\mapsto AX}$ est bijective (ou, ce qui est équivalent : injective, ou encore : surjective).
+    \item[iii)]A est inversible à gauche, c&#x27;est-à-dire qu&#x27;il existe une matrice B telle que BA = In.
+    \item[iv)]A est inversible à droite, c&#x27;est-à-dire qu&#x27;il existe une matrice B telle que AB = In.
+    \item[v)]les colonnes de A forment une base de Kn ;
+    la transposée de A est inversible (et dans ce cas, on a ${\displaystyle (^{t}\!A)^{-1}={}^{t}\!(A^{-1})}$.
+\end{itemize}
+
+
+\end{Propriété}
+\begin{Propriété}[]{Propriétés}{}
+    \begin{itemize}
+        \item Si ${\displaystyle \lambda \in K^{*}}{\displaystyle \lambda \in K^{*}},$ la matrice scalaire ${\displaystyle \lambda \mathrm {I} _{n}}$ est inversible : ${\displaystyle (\lambda \mathrm {I} _{n})^{-1}={\frac {1}{\lambda }}\mathrm {I} _{n}}$.
+     \item Plus généralement, une matrice diagonale ${\displaystyle \operatorname {diag} \left(\lambda _{1},\dots ,\lambda _{n}\right)}$est inversible si et seulement si tous ses termes diagonaux ${\displaystyle \lambda _{i}}$ sont non nuls, et son inverse est alors ${\displaystyle \operatorname {diag} \left({\frac {1}{\lambda }}_{1},\dots ,{\frac {1}{\lambda }}_{n}\right)}$.
+     \item Si une matrice carrée ${\displaystyle A} $est inversible, alors sa transposée l&#x27;est aussi, et la transposée de l&#x27;inverse de ${\displaystyle A} $est égale à l&#x27;inverse de sa transposée :
+${\displaystyle ^{\operatorname {t} }\!(A^{-1})=(^{\operatorname {t} }\!A)^{-1}}$.
+     \item (n, dim =2 )
+    \end{itemize}
+\end{Propriété}
+\subsubsubsection{Matrice triangulaire: }
+\begin{Définition}[]{Définitions}{}
+Soit A une matrice de \(M_{n}(K)\)
+\\ On appele A triangulaire supérieure si
+\(a_{i,j}=0\) pour \(i \ge j\).
+\\ On appale A triangulaire inférieure si
+\(a_{i,j}=0\) pour \(i \le j\).
+\end{Définition}
+\subsubsubsection{Matrice diagonale: }
+\begin{Définition}[]{Définitions}{}
+Soit A une matrice de \(M_{n}(K)\)
+\\ On appele A diagonale si
+\(a_{i,j}=0\) pour \(i \neq j\).
+\end{Définition}
+\subsubsubsection{Matrice scalaire: }
+\begin{Définition}[]{Définition}{}
+Soit A une matrice de \(M_{n}(K)\)
+
+On appelle  A matrice scalaire si  \(\exists \lambda \in K^* \) tel que \(A= \lambda  I_{n}\)
+\end{Définition}
+\subsubsubsection{Matrices symétriques et antisymétriques: }
+\begin{Définition}[]{Définitions}{}
+Soit A une matrice de \(M_{n}(K)\),
+\begin{itemize}
+    \item \\ On appelle A matrice symétrique si 
+\\ \(\forall (i,j) \in [|1,n|]^2, a_{i,j}=a_{j,i}\)
+\\ (c&#x27;est à dire si \(^{\operatorname {t} }\!A=A\)).
+\item \\ On appele A matrice antisymétrique 
+\\ \(\forall (i,j) \in [|1,n|]^2, a_{i,j}=-a_{j,i}\)
+\\ (c&#x27;est à dire si \(^{\operatorname {t} }\!A=-A\)).
+\end{itemize}
+
+
+\end{Définition}
+\subsubsubsection{Matrice nilpotente:}
+\section{Matrice d&#x27;une application linéaire} 
+Soient E, F, G trois espace vectoriels, avec :
+$B=(e_{1},....,e_{m})$ base de E, 
+$C=(f_{1},....,f_{n})$ base de F, 
+et D base de G.
+\subsection{Définition: }
+\begin{Définition}[]{Définition}{}
+Une application ${\displaystyle u:E\to F}$ est linéaire si et seulement s&#x27;il existe une matrice ${\displaystyle A\in \mathrm {M} _{m,n}(K)}$ telle que pour tout vecteur ${\displaystyle x}$ de ${\displaystyle E} $:
+
+Si ${\displaystyle X}$ désigne la matrice colonne des coordonnées de ${\displaystyle x}$ dans la base B
+c&#x27;est à dire si X=.. avec \(x=\sum i \in [|1,m|] x_{i}e_{i}\) et ${\displaystyle Y}$ celle des coordonnées de ${\displaystyle u(x)}$ dans la base C, c&#x27;est à dire si \(Y= \) avec \(u(x)=\sum i \in [|1,n|] y_{i}f_{i}\), alors
+\begin{center}
+    ${\displaystyle Y=AX}$.
+\end{center}
+
+De plus, cette matrice ${\displaystyle A}$ est alors unique : pour tout ${\displaystyle j\in [\![1,n]\!]}$, sa ${\displaystyle j}$-ème colonne est constituée des coordonnées de ${\displaystyle u(e_{j})}$ dans la base C.
+
+La matrice ${\displaystyle A}$ est donc appelée la matrice de ${\displaystyle u}$ dans les bases B, C et notée ${\displaystyle \mathrm {Mat} _{B,C}(u)}$.
+\end{Définition}
+\paragraph{Remarque: }
+Si ${\displaystyle F=E}$ et ${\displaystyle C=B}$, on l&#x27;appelle la matrice de ${\displaystyle u} $dans la base B.
+\subsection{Théorème: }
+\begin{Théorème}[]{Théorème}{}
+L&#x27;application ${\displaystyle \mathrm {Mat} _{B,C}:\mathrm {L} (E,F)\to \mathrm {M} _{m,n}(K)}$ est un isomorphisme d&#x27;espaces vectoriels.
+\end{Théorème}
+\subsection{Proposition: }
+\begin{Propriété}[]{Proposition}{}
+Soient ${\displaystyle u:E\to F}$ et ${\displaystyle v:F\to G}$ deux applications linéaires. Alors,
+
+${\displaystyle \mathrm {Mat} _{B,D}(v\circ u)=\mathrm {Mat} _{C,D}(v)\;\mathrm {Mat} _{B,C}(u)}$.
+\end{Propriété}
+\paragraph{Démonstration: }
+\subsection{Corollaire: }
+\begin{Propriété}[]{Corollaire}{}
+Le produit matriciel est associatif.
+\end{Propriété}
+\paragraph{Démonstration:}
+\section{Changement de bases: }
+\subsection{Définition: }
+\begin{Définition}[]{Définition}{}
+La matrice de passage de ${\displaystyle B} $à ${\displaystyle B&#x27;}$ est :
+
+la matrice ${\displaystyle \mathrm {Mat} _{B&#x27;,B}(\mathrm {Id_{E}} )}$ de l&#x27;application identité IdE, de E muni de la base ${\displaystyle B&#x27;}$ dans E muni de la base ${\displaystyle B}$
+ou, ce qui est équivalent :
+
+la matrice dont les colonnes sont les coordonnées dans ${\displaystyle B} $des vecteurs de ${\displaystyle B&#x27;}$.
+\end{Définition}
+\subsection{Remarque: }
+\begin{Définition}[]{Définition}{}
+Soit ${\displaystyle P}$ la matrice de passage de ${\displaystyle B}$ à ${\displaystyle B&#x27;}$. Il résulte immédiatement de la définition que :
+
+${\displaystyle P} $est inversible : son inverse est la matrice de passage de ${\displaystyle B&#x27;}$à ${\displaystyle B} $;
+si un même vecteur de E a pour coordonnées ${\displaystyle X}$ dans ${\displaystyle B}$ et ${\displaystyle X&#x27;}$ dans ${\displaystyle B&#x27;}$, alors ${\displaystyle X=PX&#x27;}$.
+\end{Définition}
+\subsection{Proposition: }
+\begin{Propriété}[]{Proposition}{}
+Soient :
+
+${\displaystyle u:E\to F}$ une application linéaire ;
+${\displaystyle P} $la matrice de passage de ${\displaystyle B}$ à ${\displaystyle B&#x27;}$ (bases de ${\displaystyle E}$);
+${\displaystyle Q}$ la matrice de passage de ${\displaystyle C}$ à ${\displaystyle C&#x27;}$ (bases de ${\displaystyle F}$).
+Alors,
+
+${\displaystyle \mathrm {Mat} _{B&#x27;,C&#x27;}(u)=Q^{-1}\;\mathrm {Mat} _{B,C}(u)\;P}$.
+\end{Propriété}
+\paragraph{Démonstration: }
+\section{Rang: }
+\subsection{Définition: }
+\begin{Définition}[]{Définition}{}
+Soit A une matrice de \(M_{(p,q)}(K)\), on appelle rang de A , le rang de ses vecteurs colonnes dans \(K^p\), et on le note rg(A).
+Dans le cas oû A est une matrice d&#x27;une application linéaire u , on a : rg(A)=rg(u).
+\end{Définition}
+\begin{Propriété}[]{Propriétés}{}
+\begin{itemize}
+    \item Si \(A \in M_{p,q}(K), rg(A) \leq inf\)\(\{p,q\}.\)
+    \item Si \(A \in M_{n}(K)\) alors 
+    \\ (A est inversible.) \(\Leftrightarrow\) (rg(A)=n.)
+\end{itemize}
+\end{Propriété}
+\begin{Théorème}[]{Théorème}{}
+Soient \(A \in M_{p,q}(K)\) et \(r \in N^*\), si rg(A)=r alors A est équivalent à \(J_{r}\) avec
+\\ \(J_{r}=\begin{matrix}
+    I_{r} &amp;&amp; 0
+    0     &amp;&amp; 0
+\end{matrix}
+\end{Théorème}
+\begin{Définition}[]{Définition}{}
+Soit \(A=(a_{i,j})_{(i,j) \in [|1,p|]*[|1,q|] } \in M_{(p,q)}(K)\), et soient deux sous-ensembles non vide \(I \subset \{1,...,p\}\) et \(J \subset \{1,...,q\}\).
+On appelle la matrice \((a_{i,j})_{(i,j) \in I*J} \in M_{(p,q)}(K)\) matrice extraite et A matrice bordante.
+\end{Définition}
+\begin{Théorème}[]{Théorème}{}
+Soient \(A \in M_{p,q}(K)\), son rang est égale à la taille de la plus grande matrice carrée inversible qu&#x27;on peut extraire de cette dernière.
+\end{Théorème}
+\begin{Propriété}[]{Corollaire}{}
+Le rang de la transposée d&#x27;une matrice est égal à celui de la dernière.
+\end{Propriété}
+\section{Equivalence, similitude et trace: }
+\subsection{Equivalence:}
+\subsubsubsection{Définition: }
+\begin{Définition}[]{Définition}{}
+Deux matrices ${\displaystyle M}$ et ${\displaystyle N}$ sont dites équivalentes s&#x27;il existe deux matrices inversibles ${\displaystyle P}$ et ${\displaystyle Q} $telles que :
+
+${\displaystyle N=Q^{-1}MP}$.
+\end{Définition}
+\subsubsubsection{Théorème: }
+\begin{Théorème}[]{Théorème}{}
+Deux matrices de même taille sont équivalentes si et seulement si elles ont même rang.
+\end{Théorème}
+\paragraph{Démonstration: }
+k
+\subsection{Similitude: }
+\subsubsubsection{Définition: }
+\begin{Définition}[]{Définition}{}
+Deux matrices carrées ${\displaystyle M}$ et ${\displaystyle N}$ sont dites semblables s&#x27;il existe une matrice inversible ${\displaystyle P} $telle que :
+
+${\displaystyle N=P^{-1}MP}$.
+\end{Définition}
+\subsection{Trace}
+\subsubsubsection{Définition: }
+\begin{Définition}[]{Définition}{}
+Soit A une matrice carrée. La trace de A est la somme des « éléments diagonaux » de A (les éléments de sa diagonale principale). Elle est notée : ${\displaystyle \mathrm {tr} \,\mathbf {A} }$, ou ${\displaystyle \mathrm {Tr} \,\mathbf {A} }$.
+\end{Définition}
+\subsubsubsection{Propriétés: }
+\begin{Propriété}[]{Propriété}{}
+L&#x27;application \(tr:M_{n}(K) \rightarrow K\) est une forme linéaire.
+\end{Propriété}
+\begin{Propriété}[]{Propriétés}{}
+Soient ${\displaystyle \mathbf {A}}$ et ${\displaystyle \mathbf {B}}$ deux matrices carrées de même taille et ${\displaystyle a}$ un scalaire. Alors :
+${\displaystyle \mathrm {tr} \,\left(\mathbf {A} +\mathbf {B} \right)=\mathrm {tr} \,\mathbf {A} +\mathrm {tr} \,\mathbf {B} }$;
+${\displaystyle \mathrm {tr} \,\left(a\,\mathbf {A} \right)=a\,\mathrm {tr} \,\mathbf {A} }$;
+${\displaystyle \operatorname {tr} (^{\operatorname {t} }\!\mathbf {A} )=\operatorname {tr} \,\mathbf {A} }$;
+\end{Propriété}
+\paragraph{Démonstration: }
+\paragraph{Remarque:}
+Si \(A,B,C \in M_{n}(K)\) on peut avoir \(tr(ABC)=tr(CAB)=tr(BCA)\) mais \(tr(ABC) \neq tr(ACB)\).
+\begin{Propriété}[]{Corollaire}{}
+Soient ${\displaystyle \mathbf {A} \in \mathrm {M} _{m,n}(K)}$ et ${\displaystyle \mathbf {B} \in \mathrm {M} _{n,m}(K)}$. Alors :
+${\displaystyle \mathrm {tr} \,\left(\mathbf {AB} \right)=\mathrm {tr} \,\left(\mathbf {BA} \right)}$.
+\end{Propriété}
+\paragraph{Démonstration: }
+m
+\begin{Propriété}[]{Propriété}{}
+Deux matrices semblables ont même trace.
+\end{Propriété}
+\begin{Propriété}[]{Propriété}{}
+Soit E un K-espace vectoriel et \(p \in L(E)\) un projecteur, alors 
+\\ \(tr p = rg(p).1_{K}\)
+\end{Propriété}
+ \section{Matrice définie par bloc}
+\section{Exercices:}
+
+
+\section{Compléments:}
+\subsection{Matrice diagonalement dominantes -HP}
+\begin{Définition}[]{Définition}{}
+Soit \(A=(a_{i,j})_{1\leq i,j\leq n} \in M_{n}(C)\)
+A est dite de diagonale dominante si : 
+\\
+\begin{center}
+\(\forall i \in [|1,n|], \sum_{1 \leq j \leq n ,j\neq i}|a_{i,j}| \le |a_{i,i}|\)
+\end{center}
+\end{Définition}
+\begin{Propriété}[]{Lemme de Hadamard}{}
+Soit A une matrice de diagonale dominante, A est inversible.
+\end{Propriété}
+\paragraph{Démonstration}
+\chapter{Déterminants}
+\chapter{Compléments: Dualité et \(Gl_{n}(\mathbb{K}\)}
+\chapter{PROBLEMES}
+\section{Traces:}
+\subsection{Matrice de trace nulle}
+\begin{Ex}[]{Matrice de trace nulle}{}
+Soit \(A \in M_n(\mathbb{R})\) telle que \(TrA=0_{R}\)
+\begin{itemize}
+    \item[1)] Montrer que A est semblable à une matrice n&#x27;ayant que de \(0_{R}\) dans sa diagonale.
+    \item[2)] Montrer que \(\exists X,Y \in M_n(\mathbb{R})\) tels que \(A=XY-YX\)
+\end{itemize}
+\end{Ex}
+\subsection{Traces modulo p}
+\begin{Ex}[]{Exercice:}{}
+Soit \(p\) un nombre premier et \(A,B \in M_{n}(\mathbb{Z})\).
+\begin{itemize}
+    \item[1)] Montrer que \(Tr((A+B)^p)=Tr(A^p)+Tr(B^p)[p}\).
+    \item[2)] En déduire que \(Tr(A^p)=Tr(A)[p]\).
+    \item[3)] Soit la suite récurrente \((u_n)\) définie par \(u_0=3, u_1=0, u_2=2\)
+    \\ \(\forall n\in \mathbb{N}, u_{n+3}=u_{n+1}+u_{n}\).
+    \\Montrer  p divise \(u_{p}\).
+\end{itemize}
+\end{Ex}
+\section{Formule de Burnside, Théorème de Mashke(après matrice hehehehe)}
+\section{Dérivation:}
+\section{Famille positivement génératrice:}
+\section{Décomposition de Fitting}
+\begin{Ex}[]{Exercice:}{}
+Soient E un K-espace vectoriel de dimension finie \( n \in \N^*\), et \(u \in L(E)\):
+\\ \begin{itemize}
+    \item[1)] Montrer que les suites \((Im u^k)_{k \in N}\) et \((Ker u^k)_{k \in N}\) sont strictement monotones pour l&#x27;inclusion jusqu&#x27;un certain rang m d&#x27;oû elle deviennent stationnaire.
+    \item[2)] Montrer que la suite \((dim_{K}Ker(u^{k+1})-dim_{K}Ker(u^{k}))_{k\geq 0}\) est décroissante.
+    \item[3)] Montrer que \(E=ker u^m \oplus Im u^m\).
+    \item[4)]
+\end{itemize}
+\end{Ex}
+\paragraph{Correction:}
+\section{Identité de Sylvester, Identité de Jacobi}
+\begin{Ex}[]{Exercice:}{}
+\begin{itemize}
+    \item[1)]Identité de Jacobi:
+    Soit \(A \in \mathbb{Gl}_n(\mathbb{K})\).
+    On note \(T=A^{-1}\) et on considère l&#x27;écriture par blocs des matrices A et T:
+    \\ A=\begin{pmatrix}
+        B &amp;&amp; C
+        \\S &amp;&amp; E
+    \end{pmatrix}
+    T=\begin{pmatrix}
+        W &amp;&amp; X
+        \\Y &amp;&amp; Z
+    \end{pmatrix}
+     avec \(B,W \in \mathbb{M}_r(\mathbb{K})\) et \(1\leq r \le n \).
+    \\ Montrer que \((detA)(detW)=detE\).
+    \item[2)] Soient \(I, J \subset \{1,...,n\}, card(I)=card(J)=r, A=(a_{i,j})_{(i,j)\in[|1,n|]^2} \in \mathbb{M}_n(\mathbb{K}) \) On note \(A_{I,J} \in \mathbb{M}_r(\mathbb{K})\) la matrice extraite de A.
+    \\ Notons \(I*, J*\) les complémentaires de \(I, J\) das \(\{1,...,n\}\) et \(S(I,J)=\sum_{i\in I}i+\sum_{j \in J}j\).
+    \\ Montrer que :
+        \\ (\(A \in \mathbb{Gl}_n(\mathbb{C})\) avec \(T=A^{-1}\)) \(\Rightarrow\) (\((detA)(detT_{J,I})=(-1)^{S(I,J)}(detA_{I*,J*})\))
+  
+\item[3)] Identité de Sylvester:
+Soit \(A=(a_{i,j})_{(i,j)\in[|1,n|]^2 \in \mathbb{M}_n(\mathbb{K})\), on pose :
+\\ \(\Gamma_{I,J}=det(com(A))_{I,J}, \Delta_{I,J}=det(A_{I*,J*})\).
+\\ Montrer que : 
+\begin{center}
+    \(\Gamma_{I,J}=(-1)^{S(I,J)}.\Delta_{I,J}.(detA)^{r-1}\)
+\end{center}*
+\end{itemize}
+\end{Ex}
+\paragraph{Correction:}
+\section{Dual de Mn(K)}
+\begin{Ex}[]{Exercice:}{}
+Si \(A \in \mathbb{M}_n(\mathbb{K})\) , on note \(\phi_{A}\) la forme linéaire définie  par :
+\(\phi_{A}:
+    \mathbb{M}_n(\mathbb{K}) \rightarrow \(\mathbb{K}
+       \\ X \mapsto Tr(AX)\)
+        
+\\ Montrer que \(\phi:
+    \mathbb{M}_n(\mathbb{K}) \rightarrow \(\ \mathbb{M}_n(\mathbb{K})^*
+       \\ A \mapsto \phi_{A}\)
+        
+        est un isomorphisme.
+
+\end{Ex}
+\paragraph{Correction:}
+\section{Stabilisation du GLn(K)}
+\begin{Ex}[]{Exercice}{}
+Soit \(A \in M_n(\mathbb{C})\) et \(\phi \in \mathbb{L}(M_n(\mathbb{C})\) tel que : \((A \in \mathbb{Gl}_n(\mathbb{C}))\) \(\Rightarrow\) \((\phi(A)\in \mathbb{Gl}_n(\mathbb{C}))\)
+\begin{itemize}
+    \item[1)] Montrer que :
+    (\(A \in \mathbb{Gl}_n(\mathbb{C})\)) \(\Leftrightarrow\) (\(\exists P \in \mathbb{Gl}_n(\mathbb{C}), \forall \lambda \in \mathbb{C}, P-\lambda.A \in \mathbb{Gl}_n(\mathbb{C})\))
+    \item[2)] Montrer que \((\phi(A)\in \mathbb{Gl}_n(\mathbb{C}))\)\(\Rightarrow\) \((A \in \mathbb{Gl}_n(\mathbb{C}))\)
+\end{itemize}
+\end{Ex}
+\paragraph{Correction:}
+\section{Intersection des hyperplans avec GLn(K)}
+\begin{Ex}[]{Exercice:}{}
+Soit \(n \geq 2\), Montrer que tout hyperplan de \(\mathbb{M}_n(\mathbb{K})\) coupe \(\mathbb{Gl}_n(\mathbb{K})\)
+c&#x27;est à dire :
+\\ \begin{center}
+    \(H \subset \mathbb{M}_n(\mathbb{K})\) \(\Rightarrow\) \(\mathbb{Gl}_n(\mathbb{K}) \cap H \neq \varnothing\).
+\end{center}  
+\end{Ex}
+\paragraph{Correction:}
+\section{Conservation de similitude par passage vers un surcorps}
+\begin{Ex}[]{Exercice:}{}
+\begin{itemize}
+    \item[1)] Soient\(A,B \in M_n(\mathbb{R})\) semblabes sur \(\mathbb{C}\).
+\\ Montrer qu&#x27;elles sont sembalbes sur \(\mathbb{R}\).
+\item[2)] Cas general:
+\\ Soient \(\mathbb{K}\) un corps infini et \(\mathbb{L}\) une extension de \(\mathbb{K}\).
+\\ Montrer que si \(A,B \in M_n(\mathbb{K})\) semblabes sur \(\mathbb{L}\), alors elles sont sembalbes sur \(\mathbb{K}\).
+\end{itemize}
+
+\end{Ex}
+\paragraph{Correction:}
+\section{Dimension maximale d&#x27;un sous-espace vectoriel de \(M_n(K)\) de rang p}
+\begin{Ex}[]{Exercice:}{}
+Soit \(n \geq 2\) et \(\mathbb{K}\) un corps commutatif infini.
+\\ Soit V un sous-espace vectoriel de \(\mathbb{M}_n(\mathbb{K})\), posons \(p=max\{rgA|M\in V\}\) avec \(p\le n\).
+\begin{itemize}
+    \item[1)] Montrer que V est isomorphe à un sous-espace vectoriel contenant \(J=\begin{pmatrix}
+        I_p&amp;&amp;0_{p,n-p}
+        \\0_{n-p,p}&amp;&amp;0_{p,p}
+    \end{pmatrix}\).
+    Dans la suite on suppose que \(J \in V\).
+    \item[2)] Montrer que \(si M \in V,\) alors \(\exists (A,B,C) \in \mathbb{M}_p(\mathbb{K})*\mathbb{M}_{p,n-p}(\mathbb{K})*\mathbb{M}_{n-p,p}(\mathbb{K}),\) tel que (M=\begin{pmatrix}
+        A&amp;&amp;B
+        \\C&amp;&amp;0_{p,p}
+    \end{pmatrix}\).
+    et \(BC=0_{M_{n-p,n-p}(K)}\)
+    \\On notera d&#x27;ailleurs pout tout \(M \in V, A=a(M), B=b(M), C=c(M).\)
+    \item[3)] Soient \(M \in V\) tel que \(C=0_{M_{n-p,p}(K)\)et E un sev de \(K^p\) tel que \(E=\cup_{N \in V}Im(C) \)
+    \\ Montrer que \(E \subset Ker(b(M)).\) 
+    \item[4)] notons \(r=dim_{K}E\) et soit \((e_1,...,e_r)\) une base de E complété par \((e_{r+1},...,e_p)\) en une base de \(\mathbb{K}^p\).
+    \\Posons l&#x27;application suivante: 
+    \\ \(\phi:V\rightarrow M_{p}(K)*K^{n-p}^{p-r}*M_{p,n-p}(K)\\ M=\begin{pmatrix}
+        A&amp;&amp;B
+        \\C&amp;&amp;0_{p,p}
+    \end{pmatrix} \mapsto (A,Be_{r+1},...,Be_{p},C)\)
+   \\ Montrer alors que \(dim_KV \leq np.\)
+    \item[5)] Supposons \(\mathbb{K}=\mathbb{R}\) Montrer que \(dim_KV \leq np.\)
+\end{itemize}
+\end{Ex}
+\paragraph{Correction:}
+\section{Décomposition de Bruhat}
+\begin{Ex}[]{Exercice:}{}
+\end{Ex}
+\paragraph{Correction:}
+\chapter{Réduction des endomorphismes et matrice carrées}
+\section{Généralités:}
+\subsection{Elements propres d&#x27;un endomorphisme et de matrice carrée}
+\subsubsection{Cas d&#x27;endomorphisme:}
+Soient K un corps, E un K-espace vectoriel et \(u\) un endomorphisme de \(L(E)\).
+\begin{Définition}[]{Définition}{}
+Soit \(\lambda\in K\), on dit que \(\lambda\) est une valeur propre de \(u\) si \(\exists x \in E \setminus \{0_{E}\}\) tel que : \(u(x)=\lambda x\) ce qui est équivalent aux assetions suivantes:
+\begin{itemize}
+    \item[i)] \(ker(u-\lambda.Id_{E}) \neq \{0_{E}\}\).
+    \item[ii)] \(u-\lambda.Id_{E}\) n&#x27;est pas injective.
+    \item[iii)] \(u-\lambda.Id_{E}\) n&#x27;est pas inversible (Seulement si E est de dimension finie).
+\end{itemize}
+L&#x27;ensemble des valeurs propres d&#x27;un endomorphisme s&#x27;appelle son spectre et il dépend du corps de base de l&#x27;espace vectoriel ainsi on note:
+\begin{center}
+\begin{framed}
+\(Sp_{K}(u)=\{\lambda \in K|\exists x \in E \setminus \{0_{E}\} , u(x)=\lambda.x\}\) 
+\end{framed}
+\end{center}
+\end{Définition}
+\begin{Définition}[]{Définition}{}
+Soit \(x \in E \setminus \{0_{E}\}\), on dit que x est une valeur propre de \(u\) si \(\exists \lambda \in K\) tel que : \(u(x)=\lambda x\)
+\end{Définition}
+\paragraph{Remarque:}
+\begin{itemize}
+    \item Une valeur propre peut être nulle.
+    \item Un vecteur propre ne peut jamais être nul.
+\end{itemize}
+\begin{Définition}[]{Définition}{}
+Si \(\lambda\) est une valeur propre, on appelle sous-espace propre : l&#x27;ensemble des vecteurs propres associées à cette valeur qu&#x27;on note \(E_{\lambda}(u)\) ainsi on a :
+\begin{center}
+\begin{framed}
+    \(E_{\lambda}(u)=ker(u-\lambda.Id_{E})\)
+\end{framed}
+\end{center}
+\end{Définition}
+\subsubsection{Cas d&#x27;une matrice carrée:}
+\begin{Définition}[]{Définitions}{}
+Toutes les définitions précédentes s&#x27;étend pour les matrices carrées en considèrant, pour une matrice \(A\in \mathrm {M} _{n}(K)\) l&#x27;endomorphisme :
+${\displaystyle \varphi _{A}:K^{n}\to K^{n},\ X\mapsto AX}.$
+c&#x27;est à dire :
+\begin{itemize}
+    \item   \(\lambda \in K\) est une valeur propre de \(u\) si \(\exists X \in K^n \setminus \{0_{K^n}\}\) tel que : \(AX=\lambda X\) ce qui est équivalent à \(ker(A-\lambda.I_{n}) \neq \{0_{K^n}\}\).
+    \item \(X \in K^n \setminus \{0_{K^n}\}\) est une valeur propre de \(A\) si \(\exists \lambda \in K\) tel que : \(AX=\lambda X\).
+    \item \(E_{\lambda}(A)=ker(A-\lambda.I_{n})\) est le sous-espace propre associé à la valeur propre \(\lambda\).
+\end{itemize}
+\end{Définition}
+\begin{Théorème}[]{Théorème}{}
+Soit \(k \in \mathbb{N}^*\) si \(\lambda_{1},...,\lambda_{k}\) des valeurs propres distincts deux à deux d&#x27;un endomorphisme u alors les sous-espaces propres \(\ E_{\lambda_{1}},...,E_{\lambda_{k}}\) sont en somme directe.
+\end{Théorème}
+\paragraph{Démonstration:}
+k
+\begin{Propriété}[]{Proposition}{}
+Si E est un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n \in K^*\) alors si \(u\) est un endomorphisme de E, il admet au plus \(n\) valeurs propres.
+\end{Propriété}
+\paragraph{Démonstration: }
+k
+\subsection{Polynome caractéristique}
+Depuis maintenant, on considera que E est un espace vectoriel de dimension \(n \in \mathbb{N}^*\)
+\begin{Définition}[]{Définition}{}
+Soit \(A \in M_{n}(\mathbb{K})\), on appelle polynôme caractéristique de A , le polynôme noté \(\chi_{A}\) définit par :
+\\ \begin{center}
+\begin{framed}
+    \(\chi_{A}(X)=det(A-X.I_{n})\)
+\end{framed}
+\end{center}
+\end{Définition}
+\begin{Définition}[]{Définition}{}
+Soit \(u \in L(E)\), on appelle polynôme caractéristique de u , le polynôme caractéristique de sa matrice dans une base quelconque de E, et on le note \(\chi_{u}\).
+\end{Définition}
+\paragraph{Remarque: }
+Par convention, le polynôme caractéristique est unitaire.
+\begin{Propriété}[]{Proposition}{}
+Soit \(A \in M_{n}(\mathbb{K})\), alors \(\chi_{A}=\chi_{A}\)
+\end{Propriété}
+\begin{Propriété}[]{Proposition}{}
+Deux matrices semblables ont le même polynôme caractéristique.
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\begin{Propriété}[]{}{Proposition-coef}
+    
+\end{Propriété}
+\begin{Propriété}[]{}{Proposition-matricetriangulaire}
+    
+\end{Propriété}
+\begin{Propriété}[]{}{Proposition-induit}
+    
+\end{Propriété}
+\begin{Propriété}[]{Proposition}{}
+Soit \(u \in L(E)\), on a:
+\begin{center}
+\\ (\(\lambda\) valeur propre de \(u\)) \(\Leftrightarrow\) (\(\chi_{u}(\lambda)=0_{K}\))
+\end{center}
+\end{Propriété}
+\begin{Définition}[]{Définition}{}
+Soit \(u \in L(E)\) et \(\lambda \in Sp_{K}(u)\), on appelle multiplicité de \(\lambda\) sa multiplicité en tant que racine du polynôme caractéristique de \(u\) et on la note par \(m_{\lambda}\).
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+Soit \(u \in L(E)\) et \(\lambda \in Sp_{K}(u)\) on a :
+\begin{center}
+    \(dim_{K}(E_{\lambda}) \leq m_{\lambda}\).
+\end{center}
+
+\end{Propriété}
+\subsection{Diagonalisation}
+\begin{Définition}[]{Définition}{}
+Soit \(u \in L(E)\) , u est diagonalisable s&#x27;il existe une base de E composée seulement de vecteurs propres de \(u\).
+\\ Dans une telle base, sa matrice est diagonale d&#x27;oû la définition suivante:
+\\ Un endomorphisme est diagonalisable si sa matrice est semblable à une matrice diagonale.
+\end{Définition}
+\paragraph{Démonstration: }
+k
+\begin{Définition}[]{Définition}{}
+Une matrice \(A \in M_{n}(K)\) est diagonalisable si elle est semblable à une matrice diagonale c&#x27;est à dire si :
+\begin{center}
+\begin{framed}
+\(\exists P \in Gl_{n}(K),   \exists \Lambda =diag(\lambda_{1},...,\lambda{n}) \in M_{n}(K), A=P\Lambda P^{-1}.\)
+\end{framed}
+\end{center}
+\end{Définition}
+\begin{Propriété}[]{Conditions de diagonalisabilité}{}
+Soit \(u \in L(E)\), avec \(r=card(Sp_{K}(u)), Sp_{K}(u)=\{\lambda_{1},...,\lambda_{r}\}\).
+Conditions nécessaires de diagonalisabilité: 
+\\ Les assertions suivantes sont équivalentes:
+\begin{itemize}
+    \item[i)] \(u\) est diagonalisable.    \item[ii)] \(\chi_{u}\) est scindé et  \(\forall i \in [|1,r|]\lambda_{i}\), \(m_{\lambda_{i}}=dim_{K}(E_{\lambda_{i}}\).
+    \item[iii)] \(E=\bigoplus_{i \in [|1,r|]} E_{\lambda_{i}}\)
+\end{itemize}
+Conditions suffisantes de diagonalisabilité:
+\\ Les assertions suivantes sont équivalentes:
+\begin{itemize}
+    \item[i)] \(r=dim_{K}(E)\).  \item[ii)] \(\chi_{u}\) est scindé et à racines simples.
+    \item[iii)] les valeurs propres de \(u\) sont distinctes deux à deux.
+\end{itemize}
+Dans le cas oû une des assertions ci-dessus est verifié alors \(u\) est diagonalisable.
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\begin{Propriété}[]{Proposition}{}
+Si \(u \in \mathbb{L}(E)\) est diagonalisable et $F$ un sous-espace vectoriel de $E$ stable par $u$ alors \(u_{|F}\) est diagonalisable.
+\end{Propriété}
+\subsection{Trigonalisation}
+\begin{Définition}[]{Définition}{}
+Soit \(u \in L(E)\) , $u$ est trigonalisable  s&#x27;il existe une base dans laquelle sa matrice est triangulaire supérieure.
+\end{Définition}
+\begin{Définition}[]{Définition}{}
+Soit \(A \in M_{n}(K)\), $A$ est trigonalisable si elle est semblable à une matrice triangulaire supérieure c&#x27;est à dire si:
+\\
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+Soit \(u \in L(E)\)(resp \(A \in M_{n}(K)\)), u (resp A) est diagonalisable si \(\chi_{u}\)(resp \(\chi_{A}\)) est scindé sur $K$.
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\subsection{Réduction simultanée-HP}
+\section{Polynome d&#x27;endomorphisme, et de matrice carrée}
+\subsection{Généralités}
+\begin{Définition}[]{Définition}{}
+Soient \(u \in \mathbb{L}(E)\),\(A \in M_n(\mathbb{K})\)
+les applications \(f_{u}:K[X] \rightarrow L(E) \ P \mapsto P(u)\), \(f_{A}:K[X] \rightarrow M_n(K)\ P \mapsto P(A)  \) sont des morphismes d&#x27;algèbres tels que: \begin{center}
+\begin{framed}\\
+\(\forall P \in K[X]\)  \(f_{u}(P)=P(u)=\) et \(f_{A}(P)=P(A)=\) \end{framed}\end{center}
+Si \(\exists r \in \mathbb{N}^*\) et \(\exists (a_{i})_{i \in [|0,r|]} \in K^r\) tel que \(P(X)=\sum_{i \in [|1,r|]} a_{i}.X^i\) alors \begin{center} \begin{framed}
+\(P=\sum_{i \in [|1,r|]}a_{i}.u^i\), \(P=\sum_{i \in [|1,r|]}a_{i}.A^i\)
+ \end{framed}
+\end{center}
+on a donc:
+ \(\forall x \in E, f_{u}(P)(x)=\sum_{i \in [|1,r|]}a_{i}.u^i(x)\)
+\end{Définition}
+\paragraph{Remarque:}
+\begin{itemize}
+    \item Notons que pour \(i \in \mathbb{N}^*, u^i=u\circ u \circ ... \circ u\) (i fois).
+    \item \(P(u) \in L(E)\), ie: P(u) est un endomorphisme!!
+    \item \(P(A) \in M_n(K)\), ie: P(A) est une matrice!!
+    \item si\(\u \in \mathbb{L}(E), \forall P,Q \in \mathbb{K}[X]\) on a \(P(u) \circ Q(u) = (PQ)(u)\).
+\end{itemize}
+\begin{Propriété}[]{Proposition}{}
+\begin{itemize}
+    \item[i)] \(Kerf_{u}=\{P \in K[X]|P(u)=0_{L(E)}\}\) est un idéal de \(K[X]\).
+    \item[ii)] \(Imf_{u}=\{P(u)|P \in K[X]\}\) est une sous algèbre commutative de \(L(E)\) noté \(K[u]\).
+\end{itemize}
+\end{Propriété}
+\paragraph{Démonstration:}
+.
+\subsection{Polynôme minimal}
+\begin{Définition}[]{Définition}{}
+On considère l&#x27;ideal \(\mathbb{I}=Kerf_{u}=\{P \in K[X]|P(u)=0_{L(E)}\}\), on a \(\mathbb{I} \neq \{0_{K[X]}\}\) alors il est généré par un seul élément noté  &quot;\(\mu_{u}\)&quot; ou &quot;\(\pi_{u}\)&quot; c&#x27;est à dire:
+
+\begin{center}
+\begin{framed}
+    \(\mathbb{I}=\(\pi_{u}\)K[X]\)
+\end{framed}
+\end{center}
+ On a donc : 
+\begin{center}
+\begin{framed}
+\\ \((\forall P \in K[X], P(u)=0.) \Leftrightarrow (\(\pi_{u}\)| P.) \)
+\end{framed}
+\end{center}
+
+\end{Définition}
+\paragraph{Démonstration:}
+\begin{itemize}
+    \item 
+    \item
+\end{itemize}
+\paragraph{Remarque:}
+Le polynôme minimal est unitaire.
+\begin{Définition}[]{Définition}{}
+De même on considère l&#x27;ideal \(\mathbb{I}=Kerf_{A}=\{P \in K[X]|P(A)=0_{M_n(\mathbb{K}}\}\), on a \(\mathbb{I} \neq \{0_{K[X]}\}\) alors il est généré par un seul élément noté  &quot;\(\mu_{A}\)&quot; ou &quot;\(\pi_{A}\)&quot; c&#x27;est à dire:
+
+\begin{center}
+\begin{framed}
+    \(\mathbb{I}=\(\pi_{A}\)K[X]\)
+\end{framed}
+\end{center}
+ On a donc : 
+\begin{center}
+\begin{framed}
+\\ \((\forall P \in K[X], P(A)=0.) \Leftrightarrow (\(\pi_{A}\)| P.) \)
+\end{framed}
+\end{center}
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+Si d est le degré du Polynôme minimal d&#x27;un endomorphisme alors la famille \((u^k)_{1 \leq k \leq d-1}\) est une base de \(K[u]\).
+\end{Propriété}
+\begin{Propriété}[]{Proposition}{}
+Soit \( u \in L(E), \lambda \in K\) on a :
+\\  Les racines de \(\mu_{\lambda}\) dans \(\mathbb{K}\) sont les valeurs propres de \(u\).
+ce qui est equivalent à 
+\begin{center}
+    \((\mu_{\lambda}(\lambda)=0_{K}) \Leftrightarrow (\lambda \in Sp_{K}(u).)\)
+\end{center}
+
+\end{Propriété}
+\begin{Propriété}[]{Lemme de décomposition de noyaux}{}
+Soient \(P_{1},...,P_{r}\) des polynômes premiers entre eux deux à deux tel que \(P=\Pi_{i=1}^rPi\) alors:
+
+\begin{center}
+\begin{framed}
+    \(Ker(P(u))=\bigoplus_{i=1}^r Ker(P_{i}(u))\).
+    \end{framed}
+\end{center}
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\begin{Propriété}[]{Proposition}{}
+Soit \(u \in L(E)\), les assertions suivantes sont équivalentes:
+\begin{itemize}
+    \item[i)] \(u\) est diagonalisable.
+    \item[ii)] \(\mu_{u}\) est scindé dans \(\mathbb{K}\) à racines simples.
+    \item[iii)] \(\exists P \in K[X]\) scindé à racines simples tel que \(P(u)=0_{L(E)}\).
+\end{itemize}
+\end{Propriété}
+\begin{Propriété}[]{Proposition}{}
+De même si \(A \in M_n{K}\), les assertions suivantes sont équivalentes:
+\begin{itemize}
+    \item[i)] \(A\) est diagonalisable.
+    \item[ii)] \(\mu_{A}\) est scindé dans \(\mathbb{K}\) à racines simples.
+    \item[iii)] \(\exists P \in K[X]\) scindé à racines simples tel que \(P(A)=0_{M_n{K}}\).
+\end{itemize}
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\begin{Propriété}[]{Proposition}{}
+Si \(F\) est un sous-espace vectoriel de E, stable par \(u\) et \(u_{|F}\) l&#x27;endomorphisme induit par \(u\) sur \(F\) alors \(\mu_{u_{|F}}\) divise \(\mu_{u}\).
+\\ Et si \(u\) est diagonalisable alors \(u_{|F}\) est aussi diagonalisable. 
+\end{Propriété}
+\begin{Propriété}[]{Proposition}{}
+Soit \(u \in L(E)\), les assertions suivantes sont équivalentes:
+\begin{itemize}
+    \item[i)] \(u\) est trigonalisable.
+    \item[ii)] \(\mu_{u}\) est scindé dans \(\mathbb{K}\).
+    \item[iii)] \(\exists P \in K[X]\) scindé tel que \(P(u)=0_{L(E)}\).
+\end{itemize}
+\end{Propriété}
+\begin{Propriété}[]{Proposition}{}
+De même si \(A \in M_n(\mathbb{K}\), les assertions suivantes sont équivalentes:
+\begin{itemize}
+    \item[i)] \(A\) est trigonalisable.
+    \item[ii)] \(\mu_{A}\) est scindé dans \(\mathbb{K}\).
+    \item[iii)] \(\exists P \in K[X]\) scindé tel que \(P(u)=0_{M_n{K}}\).
+\end{itemize}
+\end{Propriété}
+\subsection{Théorème de Cayley-Hamilton}
+\begin{Théorème}[]{Théorème}{}
+Soit \(u \in L(E), \chi_{u}\) son polynôme caractéristique, alors \(\chi_{u}=0_{L(E)}\)
+\end{Théorème}
+\paragraph{Démonstration:}
+k
+\subsection{Sous-espace caractéristiques}
+\begin{Définition}[]{Définition}
+{}
+Soit \(u \in \mathbb{L}(E)\) tel que son polynôme caractéristique \(\chi_{u}\) est scindé dans \(\mathbb{K}\) ie : \(\exists s \in \mathbb{N}^*\) tel que \(\exists (\lambda_{1},...,\lambda_{s}) \in \mathbb{K}^s, (\alpha_{1},...,\alpha_{s}) \in \mathbb{N}^s, \\ P=(X-\lambda_{1})^\alpha_{1}...(X-\lambda_{s})^\alpha_{s}\) \\
+Pour tout \(i \in [|1,s|]\) on appelle \mathbf{sous-espace caractéristique} le sous-espace vectoriel \(Ker(u-\lambda_{i}.Id)^\alpha_{i}\).
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+\begin{itemize}
+    \item[i)] Pour tout \(i \in [|1,s|]\), \(Ker(u-\lambda_{i}.Id)^\alpha_{i}\) est stable par \(u\).
+    \item[ii)] \(E=\bigoplus_{i=1}^s Ker(u-\lambda_{i}.Id)^\alpha_{i} \).
+    \item[iii)] Pour tout \(i \in [|1,s|], dim_{K}(Ker(u-\lambda_{i}.Id)^\alpha_{i})=\alpha_{i}\).
+\end{itemize}
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\section{Exercices}
+\subsection{Techniques de Diagonalisation}
+\section{Compléments}
+\subsection{Matrice circulantes}
+\subsubsection{Généralités}
+\begin{Définition}[]{Définition}{}
+Soit \(M \in M_{n}(\mathbb{C})\), on dit que M est une matrice circulante si elle s&#x27;écrit sous la forme suivante :
+\(M=\begin{pmatrix}
+    c_{1}&amp;&amp;c_{2}&amp;&amp;...&amp;&amp;c_{n}
+    \\c_{n}&amp;&amp;c_{1}&amp;&amp;...&amp;&amp;c_{n-1}
+    \\c_{n-1}&amp;&amp;c_{n}&amp;&amp;...&amp;&amp;c_{n-2}
+    \\ \vdots &amp;&amp;\ddots&amp;&amp; \vdots
+    \\c_{2}&amp;&amp;c_{3}&amp;&amp;...&amp;&amp;c_{1}
+\end{pmatrix}\)
+\\avec \(\forall i \in [|1,n|]\, c_{i} \in \mathbb{C} ) 
+\end{Définition}
+\begin{Propriété}[]{Proposition}{}
+On note une matrice circulante de sorte que la matrice précédente est noté \(M(c_1,...,c_n)\)
+\\On pose alors \(J=\begin{pmatrix}
+    0&amp;&amp;1&amp;&amp;0&amp;&amp;\dots&amp;&amp;0
+    \\0&amp;&amp;0&amp;&amp;1&amp;&amp;\dots&amp;&amp;0
+    \\0&amp;&amp;0&amp;&amp;0&amp;&amp;\ddots&amp;&amp;0
+    \\ \vdots &amp;&amp;\vdots &amp;&amp;\vdots&amp;&amp; \vdots&amp;&amp;\vdots
+    \\0&amp;&amp;0&amp;&amp;0&amp;&amp;\dots&amp;&amp;1
+    \\1&amp;&amp;0&amp;&amp;0&amp;&amp;\dots&amp;&amp;0
+\end{pmatrix}\)
+de sorte que 
+\\ \(J=M(0,1,...,0)\), on a donc : \\ \begin{center}(M est une matrice circulante) \(\Leftrightarrow\) (M est un polynôme en J)
+\end{center}
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\begin{Propriété}[]{Proposition}{}
+L&#x27;ensemble des matrice circulantes est une sous-algébre commutative de \(M_n(\mathbb{C})\)
+\end{Propriété}
+\paragraph{Démonstration:}
+k
+\subsubsection{Réduction des matrices circulantes}
+\begin{Propriété}[]{Réduction de la matrice J}{}
+La matrice J est diagonalisable, ses valeurs propres sont les racines n-ièmes de l&#x27;unité et ses vecteurs propres s&#x27;expriment ainsi:
+\\ On pose \(w=exp(2i\pi/n)\) alors pour tout \(k \in [|1,n|], w^k\) est valeur propre de J et :
+\(\forall k\in [|1,n|],\X=\begin{pmatrix}
+    1&amp;&amp;
+    \\w^k&amp;&amp;
+    \\w^{2k}&amp;&amp;
+    \\\vdots&amp;&amp;
+    \\w^{(n-1)k}&amp;&amp;
+\end{pmatrix}\)
+est vecteur propre de J.
+\end{Propriété}
+\paragraph{Démonstration}
+On a \(J^n=I_{n}\) donc le polynôme \(X^n-1\) est annulateur de J, ce dernier étant scindé a racines simples dans \(\mathbb{C}\), J est diagonalisable.
+\\ Les valeurs propres de J sont les racines de \(X^n-1\), du coup elles sont les racines n-ièmes de l&#x27;unité 
+\begin{Propriété}[]{Réduction d&#x27;une matrice circulante}{}
+    
+\end{Propriété}
+\subsection{Matrice de Toeplitz}
+\subsubsection{Définition}
+\begin{Définition}[]{Définition}{}
+
+\end{Définition}
+\subsubsection{Matrice de Toeplitz tridiagonale}
+\begin{Définition}[]{Définition}{}
+
+\end{Définition}
+\begin{Propriété}[]{Valeurs propres}{}
+    
+\end{Propriété}
+\paragraph{Démonstration}
+k
+\subsection{Matrice de Hankel}
+\begin{Définition}[]{Définition}{}
+
+\end{Définition}
+\begin{Propriété}[]{Valeurs propres}{}
+    
+\end{Propriété}
+\subsection{Matrice monotones }
+\begin{Définition}[]{Définition}{}
+
+\end{Définition}
+\subsection{Matrices de transvections et de dilatation}
+\begin{Définition}[]{Définition}{}
+
+\end{Définition}
+\
+\subsection{Dunford}
+\subsection{Jordan}
+\subsection{Frobenius}
+\subsection{Simplicité}
+\subsection{Nilpotence}
+\subsection{Stochastique}
+\end{document}
+
+ParseError:  Expected &#x27;}&#x27;, got &#x27;#&#x27; at position 617: …e.north east) {#̲3};},
+title=#2 …</span></p>
 </body>
 </html>
