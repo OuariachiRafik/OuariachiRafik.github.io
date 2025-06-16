@@ -17606,7 +17606,7 @@ Since we stop before the very last edge that would result in a Hamiltonian cycle
 $\forall i \in [|2,n|]$, let's consider the two edges $(v_1,v_i)$ and $(v_{i − 1},v_n)$ that can exist.
 At most one of these two edges can be present in our graph, since otherwise the cycle $(v_1\rightarrow v_2\dots\rightarrow v_{i − 1}\rightarrow v_n\rightarrow v_{n − 1}\rightarrow\dots\rightarrow v_i)$ would be a Hamiltonian cycle. Thus, the total number of edges incident to either $v_1$ or $v_n$ is at most equal to the number of choices of $i$, which is $n − 1$. Therefore, $deg(v_1) + deg(v_n) &lt; |V|$, it follows that:
 $$
-\text{If a graph is not \textit{Hamiltonian} } \Rightarrow \exists (v,w) \in V,\text{ such as } deg(v) + deg(w) &lt; |V|
+\text{If a graph is not $\textit{Hamiltonian}$ } \Rightarrow \exists (v,w) \in V,\text{ such as } deg(v) + deg(w) &lt; |V|
 $$
 Which is the contraposition of our theorem, hence the proof is concluded. $\square$</p>
 </div>
