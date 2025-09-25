@@ -1,21 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Root -->
-  <url><loc>https://ouariachirafik.github.io/</loc></url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Sections -->
-  <url><loc>https://ouariachirafik.github.io/Compsci/</loc></url>
-  <url><loc>https://ouariachirafik.github.io/Mathematics/</loc></url>
-  <url><loc>https://ouariachirafik.github.io/About/</loc></url>
 
-  
-  <!-- Compsci articles -->
-  <url><loc>https://ouariachirafik.github.io/Compsci/Graph1.html</loc></url>
-  <url><loc>https://ouariachirafik.github.io/Compsci/GraphSearch.html</loc></url>
-  <url><loc>https://ouariachirafik.github.io/Compsci/BipartiteGraph.html</loc></url>
-  <url><loc>https://ouariachirafik.github.io/Compsci/EulerianGraphs.html</loc></url>
-  <url><loc>https://ouariachirafik.github.io/Compsci/HamiltonianGraphs.html</loc></url>
+<url>
+  <loc>https://ouariachirafik.github.io/</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Mathematics/</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Compsci/</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/About/</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Mathematics/LinearAlgebraBook.html</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Compsci/Graph1.html</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Compsci/GraphSearch.html</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Compsci/BipartiteGraph.html</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Compsci/EulerianGraphs.html</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ouariachirafik.github.io/Compsci/HamiltonianGraphs.html</loc>
+  <lastmod>2025-09-25T11:47:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
-  <!-- Mathematics article -->
-  <url><loc>https://ouariachirafik.github.io/Mathematics/LinearAlgebraBook.html</loc></url>
+
 </urlset>
