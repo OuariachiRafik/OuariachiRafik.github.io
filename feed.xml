@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Alistaired's Lair</title>
+    <link>https://ouariachirafik.github.io/</link>
+    <description>Math, Computer Science & writings by Rafik Ouariachi (Alistaired)</description>
+    <language>en</language>
+
+    <!-- Computer Science -->
+    <item>
+      <title>Introduction to Graph Theory</title>
+      <link>https://ouariachirafik.github.io/Compsci/Graph1.html</link>
+      <guid>https://ouariachirafik.github.io/Compsci/Graph1.html</guid>
+      <pubDate>Sat, 04 May 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Graph Search</title>
+      <link>https://ouariachirafik.github.io/Compsci/GraphSearch.html</link>
+      <guid>https://ouariachirafik.github.io/Compsci/GraphSearch.html</guid>
+      <pubDate>Thu, 16 May 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Bipartite Graphs</title>
+      <link>https://ouariachirafik.github.io/Compsci/BipartiteGraph.html</link>
+      <guid>https://ouariachirafik.github.io/Compsci/BipartiteGraph.html</guid>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Seven Bridges of Königsberg and Eulerian Graphs</title>
+      <link>https://ouariachirafik.github.io/Compsci/EulerianGraphs.html</link>
+      <guid>https://ouariachirafik.github.io/Compsci/EulerianGraphs.html</guid>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hamiltonian Graphs</title>
+      <link>https://ouariachirafik.github.io/Compsci/HamiltonianGraphs.html</link>
+      <guid>https://ouariachirafik.github.io/Compsci/HamiltonianGraphs.html</guid>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+
+    <!-- Mathematics -->
+    <item>
+      <title>Linear Algebra textbook in French for undergrads</title>
+      <link>https://ouariachirafik.github.io/Mathematics/LinearAlgebraBook.html</link>
+      <guid>https://ouariachirafik.github.io/Mathematics/LinearAlgebraBook.html</guid>
+      <!-- No pubDate visible on the page; safe to omit -->
+    </item>
+  </channel>
+</rss>
