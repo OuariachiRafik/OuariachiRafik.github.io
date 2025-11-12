@@ -1,1 +1,111 @@
-l
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Introduction to Reinforcement Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- MathJax for LaTeX math -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Introduction to Reinforcement Learning</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>1 Introduction</h2>
+      <p>
+        In the quest for artificial general intelligence, three main paradigms have been adopted in the field of machine
+        learning to empower a machine, or rather have it <em>learn</em> to perform tasks without giving it specific instructions
+        to do so: Supervised learning, Unsupervised learning, and Reinforcement learning.
+      </p>
+      <p>
+        Reinforcement learning, which is the main subject of this series of articles, is conceptualized on the idea that a
+        machine (or agent) can learn to do any task if given reward signals by maximizing them. \cite{DSilver2021}
+      </p>
+    </section>
+
+    <section>
+      <h2>2 The framework</h2>
+      <p>
+        In their simplest form, RL problems are modelled by an agent interacting with an environment at the time step
+        \( t \) by choosing an action \( a_t \) while in state \( s_t \) and the environment returns a reward \( R_t \) and transitions
+        to the next state \( s_{t+1} \).
+      </p>
+
+      <figure>
+        <img src="framework.png" alt="RL framework diagram" />
+        <figcaption>Caption</figcaption>
+      </figure>
+
+      <p>Whatever the horizon of the problem, the goal of the agent is choosing a <em>policy</em> \( \pi \) to maximize the sum of expected rewards:</p>
+
+      <p>
+        \[
+        \mathbb{E}_{p(a_0, s_1, a_1, \ldots, a_T, s_T \mid s_0, \pi)}
+        \left[ \sum_{t=0}^T R(s_t, a_t) \,\middle|\, s_0 \right]
+        \]
+      </p>
+
+      <p>
+        A task can either be continual whereas the agent continues to interact with the model forever, or episodic, where
+        interactions are terminated in a state called <strong>terminal state</strong> that returns a reward of 0 and updates to itself.
+        Once an episode ends, it is possible to enter a new one where the initial state \( s_0 \) is randomized and the episode
+        or trajectory length \( T \) can be different, when \( T \) is finite, we call the problem a <strong>finite horizon problem</strong>.
+      </p>
+
+      <p>
+        In this case, the return to maximize is the sum of <strong>discounted</strong> rewards where each reward is multiplied by a discount factor \( \gamma \).
+      </p>
+
+      <p>
+        \[
+        \mathbb{E}_{p(a_0, s_1, a_1, \ldots, a_T, s_T \mid s_0, \pi)} \left[ \sum_{t=0}^{\infty} \gamma^{t} r_t \mid s_0 = s \right]
+        \]
+      </p>
+
+      <p>
+        The discount factor is there to ensure that the agent does not act in a <strong>myopic</strong> manner in which he will always
+        try to maximize the immediate reward by choosing an action he knows has the highest reward without further exploring
+        if there are any other actions with a higher reward.
+      </p>
+
+      <p>We make certain assumptions about the environment:</p>
+      <ul>
+        <li>
+          <strong>Memorylessness:</strong>
+          \[
+          p(s_{t+1} \mid s_t, a_t, s_{t-1}, a_{t-1}, \dots, s_0, a_0)
+          = p(s_{t+1} \mid s_t, a_t).
+          \]
+        </li>
+        <li><strong>Full observability:</strong> The agent is able to observe the full state environment.</li>
+      </ul>
+
+      <p>
+        Several approaches are used to learn optimal policies mainly: Value-based, Policy-based and Model-Based, in the next
+        chapter we will present Value-based methods.
+      </p>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <ol>
+        <li>
+          David Silver, Satinder Singh, Doina Precup, Richard S. Sutton, <em>Reward is enough</em>, Artificial Intelligence,
+          Volume 299, 2021, 103535.
+        </li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
