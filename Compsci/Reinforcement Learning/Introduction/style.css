@@ -5,27 +5,23 @@
   --muted: #94a3b8;
   --accent: #38bdf8;
   --radius: 0.75rem;
-  --width: min(900px, 100vw - 2rem);
   --code-bg: #1f2937;
 }
 
-* {
-  box-sizing: border-box;
+/* reset / override */
+html, body {
+  height: 100%;
 }
 
 body {
-  margin: 0;
+  margin: 0 auto !important;     /* center the whole page */
+  max-width: 900px;              /* column width */
   background: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
-}
-
-/* center the content column */
-header,
-main {
-  width: var(--width);
-  margin: 0 auto;
+  display: block !important;     /* kill any flex coming from elsewhere */
+  padding: 0 1rem;               /* small side padding on mobile */
 }
 
 header {
@@ -67,47 +63,4 @@ figure {
 
 figure img {
   max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
-figcaption {
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-}
-
-pre,
-code {
-  background: var(--code-bg);
-  border-radius: 0.4rem;
-  padding: 0.25rem 0.4rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.85rem;
-}
-
-pre {
-  padding: 1rem;
-  overflow-x: auto;
-}
-
-main {
-  padding-bottom: 4rem;
-}
-
-ol,
-ul {
-  padding-left: 1.25rem;
-}
-
-@media (max-width: 700px) {
-  header,
-  main {
-    width: 100%;
-    padding: 0 1rem;
-  }
-
-  h1 {
-    font-size: 1.9rem;
-  }
-}
+  height: auto
