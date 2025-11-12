@@ -1,0 +1,107 @@
+:root {
+  --bg: #0f172a;
+  --bg-elevated: #111827;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --radius: 0.75rem;
+  --width: min(900px, 100vw - 2rem);
+  --code-bg: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+header, main {
+  width: var(--width);
+}
+
+header {
+  padding: 2.5rem 0 1.5rem;
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  padding-bottom: 0.25rem;
+}
+
+p, li {
+  color: var(--text);
+}
+
+em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+a {
+  color: var(--accent);
+}
+
+figure {
+  background: var(--bg-elevated);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+pre, code {
+  background: var(--code-bg);
+  border-radius: 0.4rem;
+  padding: 0.25rem 0.4rem;
+  font-family: ui-monospace, SFMono-Regular, SFMono-Regular, SFMono-Regular, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+main {
+  padding-bottom: 4rem;
+}
+
+ol, ul {
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  header, main {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+  }
+}
