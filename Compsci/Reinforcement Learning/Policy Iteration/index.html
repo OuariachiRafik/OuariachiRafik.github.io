@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Policy Iteration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[','\\]'], ['\\(','\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Policy Iteration</h1>
+  </header>
 
+  <main>
+    <section>
+      <h2>1 Introduction</h2>
+      <p>
+        Most Reinforcement learning problems are formally defined as a sequential decision making problem and hence they
+        are Mathematically modelled by a <strong>Markov Decision Process</strong> (MDP) which is a tuple
+        \( \mathcal{M} = (\mathcal{S}, \mathcal{A}, P, R, \gamma) \) such as:
+      </p>
+      <ul>
+        <li>\( \mathcal{S} \) being the state space,</li>
+        <li>\( \mathcal{A} \) being the action space,</li>
+        <li>\( P \) being the probability distribution of state transition,</li>
+        <li>\( R \) the reward function,</li>
+        <li>\( \gamma \) the discount factor.</li>
+      </ul>
+      <p>At state \( s_t \)</p>
+    </section>
+
+    <section>
+      <h2>2 Value functions</h2>
+      <p>
+        In the previous article, we mentioned how RL is based on the idea that an agent has to choose actions to maximize
+        the expected sum of discounted rewards. If we're following the actions selected by a policy \( \pi \), then we call this the
+        <strong>value</strong> function:
+      </p>
+      <p>
+        \[
+        V_\pi(s) = \mathbb{E}_\pi \left[ \sum_{t=0}^{\infty} \gamma^t r_t \;\middle|\; s_0 = s \right]
+        \]
+      </p>
+      <p>
+        Which is the expected return if we start in state \( s \) and continue selecting actions following \( \pi \).
+        In the same breath we define the <strong>action-value</strong>, given the starting state \( s \) and the chosen action \( a \)
+        from the policy \( \pi \):
+      </p>
+      <p>
+        \[
+        Q_\pi(s,a) = \mathbb{E}_\pi \left[ \sum_{t=0}^{\infty} \gamma^t r_t \;\middle|\; s_0 = s,\, a_0 = a \right]
+        \]
+      </p>
+    </section>
+
+    <section>
+      <h2>3 Bellman Equations</h2>
+      <p>Both the value and action-value satisfy the following equations called <strong>Bellman</strong> equations:</p>
+      <p>
+        \[
+        V_\pi(s) = \mathbb{E}_\pi \big[ R_{t+1} + \gamma V_\pi(S_{t+1}) \mid S_t = s \big].
+        \]
+      </p>
+      <p>
+        \[
+        Q_\pi(s,a) = \mathbb{E}_\pi \big[ R_{t+1} + \gamma Q_\pi(S_{t+1}, A_{t+1}) \mid S_t = s,\, A_t = a \big].
+        \]
+      </p>
+      <p>
+        Then since we want to maximise them to find the optimal policy, if given one \( \pi^* \), it will be such as
+        \( V_{\pi^*}(s) \geq V_{\pi}(s), \forall s\in \mathcal{S} \), \( \mathcal{S} \) being the state space.
+      </p>
+      <p>
+        The value function for optimal policies is unique and denoted by \( V^* \), similarly we can define the optimal
+        action-value function denoted by \( Q^* \). Given the Bellman equations for normal value functions, the optimal ones
+        satisfy the following termed <strong>Bellman optimality</strong> equations:
+      </p>
+      <p>
+        \[
+        V^*(s) = \max_a \Bigl[ R(s,a) + \gamma \, \mathbb{E}_{\pi} \bigl[ V^*(S_{t+1}) \bigr] \Bigr]
+        \]
+      </p>
+      <p>
+        \[
+        Q^*(s,a) = R(s,a) + \gamma \, \mathbb{E}_{\pi}
+        \Bigl[ \max_{a'} Q^*(S_{t+1},A_{t+1}) \Bigr]
+        \]
+      </p>
+    </section>
+
+    <section>
+      <h2>4 Policy Iteration</h2>
+      <p>
+        In this section we assume that we already know the world model (i.e., we know the state transition probability
+        distribution \( P \)) and that the states and actions set are discrete and \( \gamma &lt; 1 \). Therefore we can compute
+        the value function for a certain policy (<em>policy evaluation</em>) and then we improve it using the computed value
+        function (<em>policy improvement</em>).
+      </p>
+      <p>
+        First we randomly choose an initial value function \( V_0 \) and then for an initial state \( s \) we update it according to:
+      </p>
+      <p>
+        \[
+        V_{k+1}(s) = \mathbb{E}\bigl[R_{t+1} + \gamma \cdot V_{k}(S_{t+1}) \mid S_t = s \bigr]
+        \]
+      </p>
+      <p>
+        Thanks to Brouwer's fixed-point theorem, we know that if \( k \to +\infty \) then \( V_{k} \to V_{\pi} \).
+      </p>
+      <p>
+        Once we have computed the value function for our policy, for the next action we can choose a different action than
+        the one dictated by our policy \( \pi \) that maximizes \( V_{\pi} \) at each turn; we call this a deterministic policy
+        \( \pi' \) that acts greedily with respect to \( V_{\pi} \).
+      </p>
+      <p>
+        And so, we keep alternating between policy improvement and evaluation until we reach a policy that acts greedily
+        with respect to its own value function—that's the optimal policy.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
