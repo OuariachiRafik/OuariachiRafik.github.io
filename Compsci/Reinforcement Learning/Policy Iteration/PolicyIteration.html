@@ -127,6 +127,18 @@
         with respect to its own value function—that's the optimal policy.
       </p>
     </section>
+    <section>
+      <h2>Value Iteration</h2>
+      <p>
+        We can also skip the policy evaluation step and combine evaluation and improvement into a single update
+        by using the left part of the Bellman optimality equation:
+      </p>
+      <p>
+        \[
+        V_{k+1}(s) = \max_a \Bigl[ R(s,a) + \gamma \, \mathbb{E}_{\pi} \bigl[ V_{k}(S_{t+1}) \bigr] \Bigr]
+        \]
+      </p>
+  </section>
   </main>
 </body>
 </html>
